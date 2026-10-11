@@ -219,6 +219,23 @@
     #research .research-map-node { min-height:0; padding:1rem; }
   }
 
+
+  /* Section 7: research evidence progression and methodological challenge labels */
+  #projects .project-progression { display:grid; grid-template-columns:minmax(0,1fr) 52px minmax(0,1fr) 52px minmax(0,1fr); align-items:stretch; gap:.55rem; }
+  #projects .project-progression-step { min-width:0; }
+  #projects .project-progression-connector { display:flex; align-items:center; min-width:0; }
+  #projects .project-progression-connector svg { width:100%; height:36px; overflow:visible; }
+  #projects .project-progression-connector path { fill:none; stroke:var(--royal); stroke-width:2.4; vector-effect:non-scaling-stroke; opacity:.8; }
+  #projects .project-method-challenge { border-left:2px solid var(--royal); padding-left:.8rem; text-align:left; text-justify:auto; }
+  #projects .project-research-link { line-height:1.6; }
+  #projects .project-synthesis { border-color:rgba(52,87,201,.4); background:linear-gradient(135deg,rgba(52,87,201,.1),var(--surface-solid) 75%); }
+  #projects .project-synthesis p { text-align:left; text-justify:auto; }
+  @media(max-width:760px) {
+    #projects .project-progression { grid-template-columns:1fr; gap:.65rem; }
+    #projects .project-progression-connector { justify-content:center; height:20px; }
+    #projects .project-progression-connector svg { width:46px; height:20px; transform:rotate(90deg); }
+  }
+
 </style>
 </head>
 <body class="antialiased" style="background-color:var(--bg); color:var(--text);">
@@ -949,6 +966,28 @@
       from increasingly complex data environments.
     </p>
 
+
+    <div class="project-progression mt-8 mb-2">
+      <div class="project-progression-step glass rounded-xl p-4">
+        <span class="eyebrow text-xs uppercase" style="color:var(--teal);">01 · FOUNDATIONS</span>
+        <h3 class="font-semibold mt-2">Statistical reasoning</h3>
+        <p class="text-sm mt-2" style="color:var(--text-muted);">Forecasting, inference and geographic patterns.</p>
+      </div>
+      <div class="project-progression-connector" aria-hidden="true"><svg viewBox="0 0 100 36" preserveAspectRatio="none"><path d="M0 0 C25 0 25 30 50 30 S75 0 100 0"/></svg></div>
+      <div class="project-progression-step glass rounded-xl p-4">
+        <span class="eyebrow text-xs uppercase" style="color:var(--teal);">02 · COMPUTATIONAL METHODS</span>
+        <h3 class="font-semibold mt-2">Modeling and population data</h3>
+        <p class="text-sm mt-2" style="color:var(--text-muted);">Machine learning, language technologies and sensitive-data analysis.</p>
+      </div>
+      <div class="project-progression-connector" aria-hidden="true"><svg viewBox="0 0 100 36" preserveAspectRatio="none"><path d="M0 0 C25 0 25 30 50 30 S75 0 100 0"/></svg></div>
+      <div class="project-progression-step glass rounded-xl p-4">
+        <span class="eyebrow text-xs uppercase" style="color:var(--teal);">03 · APPLIED SYSTEMS</span>
+        <h3 class="font-semibold mt-2">Data quality and evidence</h3>
+        <p class="text-sm mt-2" style="color:var(--text-muted);">Field workflows, validation, integration and reporting.</p>
+      </div>
+    </div>
+    <p class="text-xs mt-3 mb-2" style="color:var(--text-muted);">Conceptual progression across research experience—not a claim that every project followed this exact chronology.</p>
+
     <div class="grid md:grid-cols-2 gap-5 mt-12">
 
       <article class="project-card glass rounded-2xl p-7 card-hover" data-cat="statistics time-series">
@@ -969,6 +1008,8 @@
           This project established an early foundation for the spatio-temporal and predictive modeling direction
           that now motivates my doctoral interests in complex crisis data.
         </p>
+        <p class="text-sm mt-3 project-method-challenge"><strong style="color:var(--text);">Methodological challenge.</strong> Forecast accuracy depends on seasonal assumptions, data length and how performance is evaluated against a suitable baseline.</p>
+        <p class="text-xs mt-3 project-research-link" style="color:var(--teal);"><i class="fa-solid fa-link mr-1" aria-hidden="true"></i> PhD connection: temporal modeling · uncertainty · model validation</p>
         <div class="flex flex-wrap gap-2 mt-5">
           <span class="badge text-[11px] px-2 py-1 rounded-full">R</span>
           <span class="badge text-[11px] px-2 py-1 rounded-full">SARIMA</span>
@@ -994,6 +1035,8 @@
           The work connected statistical inference with geographic structure and provided an early basis for
           thinking about spatial dependence in population-level data.
         </p>
+        <p class="text-sm mt-3 project-method-challenge"><strong style="color:var(--text);">Methodological challenge.</strong> Geographic variation in reported risk does not by itself establish spatial dependence, causation, or differences in underlying exposure.</p>
+        <p class="text-xs mt-3 project-research-link" style="color:var(--teal);"><i class="fa-solid fa-link mr-1" aria-hidden="true"></i> PhD connection: spatial inference · scale effects · population heterogeneity</p>
         <div class="flex flex-wrap gap-2 mt-5">
           <span class="badge text-[11px] px-2 py-1 rounded-full">GIS</span>
           <span class="badge text-[11px] px-2 py-1 rounded-full">Statistics</span>
@@ -1019,6 +1062,8 @@
           The project provides the computational starting point for my current interest in low-resource NLP,
           data-efficient learning and multilingual AI.
         </p>
+        <p class="text-sm mt-3 project-method-challenge"><strong style="color:var(--text);">Methodological challenge.</strong> Language and task-specific performance must be evaluated separately; an apparently fluent answer may still be mathematically incorrect.</p>
+        <p class="text-xs mt-3 project-research-link" style="color:var(--teal);"><i class="fa-solid fa-link mr-1" aria-hidden="true"></i> PhD connection: low-resource learning · evaluation · generalization</p>
         <div class="flex flex-wrap gap-2 mt-5">
           <span class="badge text-[11px] px-2 py-1 rounded-full">Python</span>
           <span class="badge text-[11px] px-2 py-1 rounded-full">TensorFlow</span>
@@ -1046,6 +1091,8 @@
           methodological challenges involving data quality, interoperability, missingness, privacy and decision-making
           under operational uncertainty.
         </p>
+        <p class="text-sm mt-3 project-method-challenge"><strong style="color:var(--text);">Methodological challenge.</strong> Inconsistent definitions, missing records, system interoperability and confidentiality constraints can affect the validity of downstream indicators.</p>
+        <p class="text-xs mt-3 project-research-link" style="color:var(--teal);"><i class="fa-solid fa-link mr-1" aria-hidden="true"></i> PhD connection: data quality · missingness · responsible population inference</p>
         <div class="flex flex-wrap gap-2 mt-5">
           <span class="badge text-[11px] px-2 py-1 rounded-full">Python</span>
           <span class="badge text-[11px] px-2 py-1 rounded-full">SQL</span>
@@ -1073,6 +1120,8 @@
           This work forms an early bridge between statistical analysis, sensitive population data and the
           responsible-AI questions that now sit within my doctoral research agenda.
         </p>
+        <p class="text-sm mt-3 project-method-challenge"><strong style="color:var(--text);">Methodological challenge.</strong> Observed associations may reflect sampling, measurement or contextual differences and should not automatically be interpreted as causal effects.</p>
+        <p class="text-xs mt-3 project-research-link" style="color:var(--teal);"><i class="fa-solid fa-link mr-1" aria-hidden="true"></i> PhD connection: selection bias · statistical inference · responsible data use</p>
         <div class="flex flex-wrap gap-2 mt-5">
           <span class="badge text-[11px] px-2 py-1 rounded-full">Python</span>
           <span class="badge text-[11px] px-2 py-1 rounded-full">SPSS / STATA</span>
@@ -1099,6 +1148,8 @@
           how should statistical and machine-learning methods account for the imperfections and constraints
           of the systems that generate the data?
         </p>
+        <p class="text-sm mt-3 project-method-challenge"><strong style="color:var(--text);">Methodological challenge.</strong> Validation rules can reduce avoidable errors, but they cannot eliminate all bias or guarantee that collected records represent the underlying population.</p>
+        <p class="text-xs mt-3 project-research-link" style="color:var(--teal);"><i class="fa-solid fa-link mr-1" aria-hidden="true"></i> PhD connection: measurement processes · data provenance · uncertainty-aware analysis</p>
         <div class="flex flex-wrap gap-2 mt-5">
           <span class="badge text-[11px] px-2 py-1 rounded-full">Data Quality</span>
           <span class="badge text-[11px] px-2 py-1 rounded-full">Python / SQL</span>
@@ -1107,6 +1158,20 @@
         </div>
       </article>
 
+    </div>
+
+    <div class="project-synthesis glass-strong rounded-2xl p-6 md:p-8 mt-8">
+      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// What this evidence prepares me to investigate</p>
+      <h3 class="text-xl md:text-2xl font-semibold mt-3">From applying methods to questioning when evidence can be trusted.</h3>
+      <p class="text-sm mt-3 max-w-4xl" style="color:var(--text-muted);">Across these projects, the common thread is not a claim that one method solves every problem. It is a growing interest in how data are generated, how assumptions shape results, how models perform beyond the data used to develop them, and how uncertainty should be communicated—especially when decisions affect people and communities.</p>
+      <div class="project-synthesis-tags flex flex-wrap gap-2 mt-5">
+        <span class="badge text-[11px] px-2 py-1 rounded-full">Statistical inference</span>
+        <span class="badge text-[11px] px-2 py-1 rounded-full">Spatial-temporal analysis</span>
+        <span class="badge text-[11px] px-2 py-1 rounded-full">Model generalization</span>
+        <span class="badge text-[11px] px-2 py-1 rounded-full">Data quality &amp; missingness</span>
+        <span class="badge text-[11px] px-2 py-1 rounded-full">Responsible population data</span>
+      </div>
+      <p class="text-xs mt-5" style="color:var(--text-muted);">The projects document applied experience and research preparation. They do not, by themselves, establish causal findings, generalizable model performance, or validated research impact.</p>
     </div>
   </div>
 </section>
