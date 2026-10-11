@@ -1,399 +1,1040 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f7f8fa">
-  <meta name="description" content="Nayeem Sarker — Statistics and population health data science, with applied experience in humanitarian information management, statistical analysis, and computational research.">
-  <title>Nayeem Sarker | Research Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --bg: #f7f8fa;
-      --paper: #ffffff;
-      --ink: #172235;
-      --muted: #596579;
-      --soft: #778297;
-      --line: #e2e7ee;
-      --blue: #244bb5;
-      --blue-soft: #edf2ff;
-      --teal: #087e78;
-      --teal-soft: #e8f6f3;
-      --max: 1080px;
-      --radius: 18px;
-      --shadow: 0 8px 32px rgba(23, 34, 53, .055);
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nayeem Sarker — PhD Research Portfolio — PhD Research Profile | Statistics → CS → Humanitarian Informatics</title>
+<meta name="description" content="Nayeem Sarker — PhD applicant at the intersection of Statistics, Computer Science and Humanitarian Informatics, focused on spatio-temporal modeling, low-resource NLP and responsible analytics for complex real-world data." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    darkMode: 'class',
+    theme: {
+      extend: {
+        colors: {
+          slate: {
+            950: '#0B1220',
+            900: '#0F172A',
+            850: '#141F35',
+            800: '#1B2A45',
+          },
+          royal: { DEFAULT: '#2148B8', deep: '#1E3A8A', light: '#5B7FE0' },
+          teal:  { DEFAULT: '#0D9488', bright: '#2DD4BF', dim: '#0B6E64' },
+        },
+        fontFamily: {
+          sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+          mono: ['Fira Code', 'ui-monospace', 'monospace'],
+        },
+      }
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 88px; }
-    body {
-      margin: 0; background: var(--bg); color: var(--ink);
-      font: 16px/1.7 "DM Sans", system-ui, -apple-system, sans-serif;
-      -webkit-font-smoothing: antialiased;
-    }
-    a { color: var(--blue); text-underline-offset: 3px; }
-    a:hover { text-decoration-thickness: 2px; }
-    a:focus-visible, button:focus-visible { outline: 3px solid #6c8ff1; outline-offset: 3px; }
-    h1, h2, h3 { font-family: "Manrope", sans-serif; line-height: 1.2; letter-spacing: -.035em; }
-    h1 { font-size: clamp(2.5rem, 6vw, 4.7rem); max-width: 850px; margin: 18px 0 22px; }
-    h2 { font-size: clamp(1.75rem, 3vw, 2.45rem); margin: 8px 0 14px; }
-    h3 { font-size: 1.15rem; margin: 0 0 10px; letter-spacing: -.02em; }
-    p { margin: 0 0 14px; }
-    .wrap { width: min(var(--max), calc(100% - 40px)); margin-inline: auto; }
-    .skip { position: absolute; left: -9999px; top: 0; background: white; padding: 10px; z-index: 100; }
-    .skip:focus { left: 12px; }
-    header {
-      position: sticky; top: 0; z-index: 20; background: rgba(247,248,250,.93);
-      backdrop-filter: blur(14px); border-bottom: 1px solid rgba(226,231,238,.9);
-    }
-    .nav { min-height: 68px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .brand { color: var(--ink); text-decoration: none; font-family: "Manrope", sans-serif; font-weight: 800; letter-spacing: -.04em; white-space: nowrap; }
-    .brand span { color: var(--teal); }
-    nav { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; justify-content: flex-end; }
-    nav a { color: var(--muted); text-decoration: none; font-size: .88rem; font-weight: 600; }
-    nav a:hover { color: var(--blue); }
-    .hero { padding: 88px 0 64px; background: radial-gradient(ellipse at 85% 5%, rgba(36,75,181,.08), transparent 35%), radial-gradient(ellipse at 5% 30%, rgba(8,126,120,.07), transparent 30%); }
-    .eyebrow { color: var(--teal); text-transform: uppercase; font-weight: 700; font-size: .76rem; letter-spacing: .14em; }
-    .lead { max-width: 780px; font-size: clamp(1.08rem, 2vw, 1.28rem); color: var(--muted); }
-    .hero-note { max-width: 790px; color: var(--muted); }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 26px; }
-    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 9px; min-height: 44px; padding: 11px 17px; border: 1px solid var(--line); border-radius: 999px; text-decoration: none; font-weight: 700; font-size: .92rem; }
-    .btn-primary { color: white; background: var(--blue); border-color: var(--blue); }
-    .btn-primary:hover { background: #1b3b94; text-decoration: none; }
-    .btn-secondary { background: var(--paper); color: var(--ink); }
-    .btn-secondary:hover { border-color: #aebbd0; text-decoration: none; }
-    .meta { display: flex; flex-wrap: wrap; gap: 9px 18px; color: var(--soft); font-size: .9rem; margin-top: 22px; }
-    .meta a { color: var(--muted); }
-    main section { padding: 66px 0; border-top: 1px solid var(--line); }
-    .section-head { max-width: 760px; margin-bottom: 28px; }
-    .section-intro { color: var(--muted); max-width: 760px; }
-    .grid { display: grid; gap: 18px; }
-    .grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-    .card { background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); min-width: 0; }
-    .card p:last-child { margin-bottom: 0; }
-    .tagrow { display: flex; flex-wrap: wrap; gap: 7px; margin-top: 16px; }
-    .tag { display: inline-flex; align-items: center; background: #f0f3f8; color: #45516a; padding: 4px 9px; border-radius: 999px; font-size: .76rem; font-weight: 600; }
-    .tag.teal { background: var(--teal-soft); color: #086c66; }
-    .tag.blue { background: var(--blue-soft); color: #28469c; }
-    .label { color: var(--soft); font-size: .75rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 9px; }
-    .card p, .muted { color: var(--muted); }
-    .research-callout { background: #edf4f4; border-left: 4px solid var(--teal); padding: 21px 24px; border-radius: 0 14px 14px 0; margin-top: 22px; }
-    .research-callout p { color: #344b55; margin-bottom: 0; }
-    .pub-title { font-size: 1.2rem; font-weight: 800; }
-    .pub-meta { color: var(--muted); margin: 10px 0; }
-    .timeline { display: grid; gap: 0; }
-    .timeline-item { display: grid; grid-template-columns: 150px 1fr; gap: 20px; padding: 19px 0; border-bottom: 1px solid var(--line); }
-    .timeline-item:last-child { border-bottom: 0; }
-    .date { color: var(--soft); font-size: .88rem; font-weight: 600; }
-    .role { font-weight: 800; margin-bottom: 4px; }
-    .org { color: var(--muted); font-size: .92rem; }
-    .education { display: grid; gap: 14px; }
-    .education-item { padding: 20px; background: var(--paper); border: 1px solid var(--line); border-radius: 14px; }
-    .education-item h3 { margin-bottom: 5px; }
-    .education-item p { color: var(--muted); margin-bottom: 4px; }
-    .coursework { border-style: dashed; background: #fbfcfe; }
-    .skill-group h3 { font-size: 1rem; }
-    .skill-group p { font-size: .93rem; }
-    .disclaimer { color: var(--soft); font-size: .86rem; }
-    footer { border-top: 1px solid var(--line); padding: 30px 0 42px; color: var(--soft); font-size: .87rem; }
-    .footer-row { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
-    @media (max-width: 780px) {
-      .nav { align-items: flex-start; flex-direction: column; padding: 15px 0; gap: 10px; }
-      nav { justify-content: flex-start; gap: 12px 16px; }
-      .hero { padding: 58px 0 48px; }
-      main section { padding: 48px 0; }
-      .grid-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    }
-    @media (max-width: 560px) {
-      .wrap { width: min(100% - 28px, var(--max)); }
-      .grid-2, .grid-3 { grid-template-columns: 1fr; }
-      .timeline-item { grid-template-columns: 1fr; gap: 5px; }
-      .card { padding: 20px; }
-      .actions .btn { width: 100%; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
-    }
-  </style>
+  }
+</script>
+
+<style>
+  :root{
+    --bg:#0B1220; --bg2:#0F172A; --surface: rgba(27,42,69,0.55); --surface-solid:#141F35;
+    --border: rgba(148,163,184,0.14); --border-strong: rgba(148,163,184,0.28);
+    --text:#E7ECF5; --text-muted:#8CA0C2; --text-dim:#5E7093;
+    --royal:#3457C9; --royal-deep:#1E3A8A; --teal:#14B8A6; --teal-dim:#0D9488;
+  }
+  html[data-theme="light"]{
+    --bg:#F1F4FA; --bg2:#E7ECF6; --surface: rgba(255,255,255,0.55); --surface-solid:#FFFFFF;
+    --border: rgba(30,58,138,0.12); --border-strong: rgba(30,58,138,0.22);
+    --text:#111A2E; --text-muted:#3E4E6E; --text-dim:#6B7A97;
+    --royal:#1E3A8A; --royal-deep:#1E3A8A; --teal:#0D9488; --teal-dim:#0D9488;
+  }
+  *{ scroll-behavior:smooth; }
+  body{
+    background:
+      radial-gradient(1200px 600px at 12% -8%, rgba(52,87,201,0.20), transparent 60%),
+      radial-gradient(900px 500px at 90% 0%, rgba(20,184,166,0.14), transparent 55%),
+      var(--bg);
+    color:var(--text);
+    font-family:'Inter',sans-serif;
+    transition:background .4s ease, color .4s ease;
+  }
+  .font-mono{ font-family:'Fira Code',monospace; }
+  ::selection{ background:var(--teal); color:#04140F; }
+
+  .glass{
+    background:var(--surface);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border:1px solid var(--border);
+  }
+  .glass-strong{
+    background:var(--surface-solid);
+    border:1px solid var(--border-strong);
+  }
+  .grid-overlay{
+    background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-size: 42px 42px;
+    mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 30%, transparent 75%);
+  }
+  .eyebrow{ letter-spacing:.18em; font-family:'Fira Code',monospace; }
+  .grad-text{
+    background: linear-gradient(100deg, var(--teal) 0%, var(--royal) 60%, var(--teal) 100%);
+    -webkit-background-clip:text; background-clip:text; color:transparent;
+    background-size:200% auto;
+    animation: sheen 7s linear infinite;
+  }
+  @keyframes sheen{ to{ background-position:200% center; } }
+
+  .nav-link{ position:relative; color:var(--text-muted); transition:color .25s; }
+  .nav-link:hover{ color:var(--text); }
+  .nav-link::after{
+    content:''; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:var(--teal);
+    transition:width .25s ease;
+  }
+  .nav-link:hover::after{ width:100%; }
+
+  .card-hover{ transition:transform .35s cubic-bezier(.2,.8,.2,1), border-color .35s, box-shadow .35s; }
+  .card-hover:hover{ transform:translateY(-6px); border-color:var(--teal); box-shadow:0 20px 60px -20px rgba(20,184,166,0.35); }
+
+  .btn-primary{
+    background:linear-gradient(120deg, var(--royal), var(--royal-deep));
+    box-shadow: 0 8px 30px -10px rgba(52,87,201,.6);
+  }
+  .btn-primary:hover{ box-shadow: 0 10px 36px -8px rgba(52,87,201,.85); transform:translateY(-2px); }
+  .btn-ghost{ border:1px solid var(--border-strong); }
+  .btn-ghost:hover{ border-color:var(--teal); color:var(--teal); }
+
+  /* Pipeline signature element */
+  .pipe-rail{
+    position:absolute; top:50%; left:4%; right:4%; height:2px; transform:translateY(-50%);
+    background: repeating-linear-gradient(90deg, var(--border-strong) 0 6px, transparent 6px 12px);
+  }
+  .pipe-packet{
+    position:absolute; top:50%; width:10px; height:10px; border-radius:9999px;
+    background: var(--teal); box-shadow:0 0 0 4px rgba(20,184,166,0.18), 0 0 18px rgba(20,184,166,0.9);
+    transform:translate(-50%,-50%);
+    animation: travel 6s cubic-bezier(.65,0,.35,1) infinite;
+  }
+  @keyframes travel{
+    0%{ left:4%; opacity:0; }
+    6%{ opacity:1; }
+    94%{ opacity:1; }
+    100%{ left:96%; opacity:0; }
+  }
+  .pipe-node{ transition: transform .3s, border-color .3s; }
+  .pipe-node:hover{ transform:translateY(-4px); border-color:var(--teal); }
+  .pipe-num{ font-family:'Fira Code',monospace; }
+
+  .tab-btn{ border:1px solid var(--border); color:var(--text-muted); transition:.25s; }
+  .tab-btn.active{ background:var(--teal); color:#04140F; border-color:var(--teal); font-weight:600; }
+  .tab-btn:not(.active):hover{ border-color:var(--teal); color:var(--teal); }
+
+  .badge{ font-family:'Fira Code',monospace; border:1px solid var(--border-strong); color:var(--text-muted); }
+
+  .theme-toggle{ border:1px solid var(--border-strong); }
+
+  .divider-glow{ height:1px; background:linear-gradient(90deg, transparent, var(--teal), transparent); opacity:.5; }
+
+  .kpi-num{ font-family:'Fira Code',monospace; }
+
+  ::-webkit-scrollbar{ width:10px; }
+  ::-webkit-scrollbar-track{ background:var(--bg); }
+  ::-webkit-scrollbar-thumb{ background:var(--border-strong); border-radius:8px; }
+
+  @media (max-width: 900px){
+    .pipe-rail, .pipe-packet{ display:none; }
+  }
+</style>
 </head>
-<body>
-  <a class="skip" href="#main">Skip to main content</a>
-  <header>
-    <div class="wrap nav">
-      <a class="brand" href="#home"><span>N.</span> Sarker <span style="color:var(--soft);font-weight:500">/ Research</span></a>
-      <nav aria-label="Main navigation">
-        <a href="#research">Research</a>
-        <a href="#publication">Publication</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#skills">Methods</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<body class="antialiased" style="background-color:var(--bg); color:var(--text);">
+
+<!-- NAV -->
+<header class="fixed top-0 left-0 right-0 z-50">
+  <div class="mx-3 mt-3 md:mx-8 md:mt-5">
+    <nav class="glass rounded-2xl px-5 py-3 flex items-center justify-between">
+      <a href="#home" class="font-mono text-sm md:text-base tracking-tight" style="color:var(--text);">
+        <span style="color:var(--teal);">N.</span>Sarker <span class="hidden sm:inline text-xs" style="color:var(--text-dim);">// research.profile</span>
+      </a>
+      <div class="hidden lg:flex items-center gap-7 text-sm">
+        <a href="#about" class="nav-link">About</a>
+        <a href="#pipeline" class="nav-link">Pipeline</a>
+        <a href="#research" class="nav-link">Research</a>
+        <a href="#dashboards" class="nav-link">Dashboards</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#publication" class="nav-link">Publication</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </div>
+      <div class="flex items-center gap-2">
+        <button id="themeToggle" aria-label="Toggle color theme" class="theme-toggle w-9 h-9 rounded-full grid place-items-center" style="color:var(--text);">
+          <i class="fa-solid fa-moon text-sm" id="themeIcon"></i>
+        </button>
+        <a href="#contact" class="hidden md:inline-flex btn-primary text-sm text-white px-4 py-2 rounded-full font-medium">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section id="home" class="relative pt-40 pb-24 md:pt-48 md:pb-32 overflow-hidden">
+  <div class="absolute inset-0 grid-overlay pointer-events-none"></div>
+  <div class="max-w-6xl mx-auto px-6 relative">
+    <p class="eyebrow text-xs uppercase mb-5" style="color:var(--teal);">// PhD Research Profile — Statistics → Public Health → Applied ML/NLP</p>
+    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] max-w-4xl">
+      From <span class="grad-text">statistical foundations to applied computational research</span> in public health and population data.
+    </h1>
+    <p class="mt-6 max-w-2xl text-base md:text-lg" style="color:var(--text-muted);">
+      Nayeem Sarker — researcher with a dual Master's in
+      <span style="color:var(--text);">Computer Science &amp; Engineering</span> and
+      <span style="color:var(--text);">Statistics</span> from Shahjalal University of Science and Technology (SUST), Sylhet, Bangladesh.
+      Research interests include Public Health, Biostatistics, Applied Machine Learning and NLP.
+      Three years of humanitarian information-management experience across 26 Rohingya refugee camps,
+      including management of approximately 4,500 protection cases in case-management workflows.
+    </p>
+
+    <div class="mt-9 flex flex-wrap items-center gap-4">
+      <a href="mailto:nayeemsarker.sta.sust.bd@gmail.com?subject=PhD%20Supervision%20Inquiry" class="btn-primary text-white px-6 py-3 rounded-full font-medium text-sm inline-flex items-center gap-2">
+        <i class="fa-solid fa-paper-plane"></i> Discuss PhD Research
+      </a>
+      <a href="assets/Nayeem_Sarker_PhD_Academic_CV.pdf" target="_blank" rel="noopener" class="btn-ghost px-6 py-3 rounded-full font-medium text-sm inline-flex items-center gap-2" style="color:var(--text);">
+        <i class="fa-solid fa-file-arrow-down"></i> Download CV
+      </a>
+      <a href="https://github.com/nayeemEmolin" target="_blank" rel="noopener" class="w-11 h-11 rounded-full glass grid place-items-center" aria-label="GitHub">
+        <i class="fa-brands fa-github"></i>
+      </a>
+      <a href="https://www.linkedin.com/in/nayeem-sarker-44a31439a/" target="_blank" rel="noopener" class="w-11 h-11 rounded-full glass grid place-items-center" aria-label="LinkedIn">
+        <i class="fa-brands fa-linkedin-in"></i>
+      </a>
     </div>
-  </header>
 
-  <main id="main">
-    <section class="hero" id="home" style="border-top:0">
-      <div class="wrap">
-        <p class="eyebrow">Research portfolio · Bangladesh</p>
-        <h1>Statistics and computational methods for population data.</h1>
-        <p class="lead">I am a Statistics graduate with applied experience in humanitarian information management and an interest in rigorous, reproducible analysis for population health and resource-constrained settings.</p>
-        <p class="hero-note">My academic foundation is in Statistics at Shahjalal University of Science and Technology (SUST). My professional work has involved information systems, data quality, reporting, and protection-programme data in Cox’s Bazar. I am interested in developing stronger methodological expertise in biostatistics, population health data science, and responsible statistical learning.</p>
-        <div class="actions">
-          <a class="btn btn-primary" href="assets/Nayeem_Sarker_PhD_Academic_CV.pdf" target="_blank" rel="noopener">View academic CV ↗</a>
-          <a class="btn btn-secondary" href="#research">Explore research</a>
-          <a class="btn btn-secondary" href="mailto:nayeemsarker.sta.sust.bd@gmail.com?subject=Research%20Discussion">Email me</a>
-        </div>
-        <div class="meta">
-          <span>Cumilla, Bangladesh</span>
-          <a href="https://github.com/nayeemEmolin" target="_blank" rel="noopener">GitHub ↗</a>
-          <a href="https://www.linkedin.com/in/nayeem-sarker-44a31439a/" target="_blank" rel="noopener">LinkedIn ↗</a>
-          <a href="mailto:nayeemsarker.sta.sust.bd@gmail.com">Email ↗</a>
-        </div>
+    <!-- KPI strip -->
+    <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="glass rounded-2xl p-5 card-hover">
+        <div class="kpi-num text-3xl font-semibold" style="color:var(--teal);">26</div>
+        <div class="text-xs mt-1" style="color:var(--text-muted);">Refugee camps under IM oversight</div>
       </div>
-    </section>
-
-    <section id="research">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">01 · Research direction</p>
-          <h2>Questions I want to investigate</h2>
-          <p class="section-intro">I am building a focused research direction that connects statistical methods with practical problems in population-level data. These are research interests, not claims that I have already completed work in every area.</p>
-        </div>
-        <div class="grid grid-3">
-          <article class="card">
-            <p class="label">Primary interest</p>
-            <h3>Biostatistics &amp; Population Health Data Science</h3>
-            <p>Statistical inference, population-level estimation, longitudinal analysis, and careful interpretation of evidence for public-health questions.</p>
-            <div class="tagrow"><span class="tag teal">Statistical inference</span><span class="tag">Population data</span><span class="tag">Biostatistics</span></div>
-          </article>
-          <article class="card">
-            <p class="label">Applied context</p>
-            <h3>Humanitarian Data &amp; Information Quality</h3>
-            <p>Understanding how missingness, measurement error, inconsistent records, and operational constraints affect the quality of evidence used in humanitarian programmes.</p>
-            <div class="tagrow"><span class="tag teal">Data quality</span><span class="tag">Missing data</span><span class="tag">Responsible data</span></div>
-          </article>
-          <article class="card">
-            <p class="label">Methods to develop</p>
-            <h3>Spatial Analysis &amp; Statistical Learning</h3>
-            <p>Exploring geographic and temporal variation, model validation, uncertainty, and interpretable predictive methods for structured population data.</p>
-            <div class="tagrow"><span class="tag blue">Spatial methods</span><span class="tag">Time series</span><span class="tag">Interpretable ML</span></div>
-          </article>
-        </div>
-        <div class="research-callout">
-          <p><strong>Current academic goal:</strong> pursue doctoral training that strengthens my methodological foundation in biostatistics and population health data science, while drawing on practical experience working with complex programme data.</p>
-        </div>
+      <div class="glass rounded-2xl p-5 card-hover">
+        <div class="kpi-num text-3xl font-semibold" style="color:var(--teal);">3</div>
+        <div class="text-xs mt-1" style="color:var(--text-muted);">Web-based IMS/PIMS designed &amp; deployed</div>
       </div>
-    </section>
+      <div class="glass rounded-2xl p-5 card-hover">
+        <div class="kpi-num text-3xl font-semibold" style="color:var(--teal);">~40%</div>
+        <div class="text-xs mt-1" style="color:var(--text-muted);">Reduction in institutional reporting overhead</div>
+      </div>
+      <div class="glass rounded-2xl p-5 card-hover">
+        <div class="kpi-num text-3xl font-semibold" style="color:var(--teal);">~150</div>
+        <div class="text-xs mt-1" style="color:var(--text-muted);">Field &amp; programme staff trained</div>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <section id="publication">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">02 · Publication</p>
-          <h2>Published work</h2>
-          <p class="section-intro">One publication is listed here. Citation details should be checked against the publisher’s final record before formal applications.</p>
-        </div>
-        <article class="card">
-          <p class="label">Journal article · 2022</p>
-          <div class="pub-title">Forecast, Trend, Growth, and Instability of Internet Users in Bangladesh</div>
-          <p class="pub-meta">Sarker, N., Sorkar, M. N. U., Sorkar, M. R. U., &amp; Uddin, M. T. (2022). <em>Computer Engineering and Intelligent Systems</em>, 13(4).</p>
-          <p class="muted">DOI: <a href="https://doi.org/10.7176/CEIS/13-4-01" target="_blank" rel="noopener">10.7176/CEIS/13-4-01</a></p>
-          <div class="actions">
-            <a class="btn btn-primary" href="https://doi.org/10.7176/CEIS/13-4-01" target="_blank" rel="noopener">Open DOI ↗</a>
-            <a class="btn btn-secondary" href="https://iiste.org/Journals/index.php/CEIS/article/view/59330/61255" target="_blank" rel="noopener">Read article ↗</a>
+<!-- ABOUT -->
+<section id="about" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="grid md:grid-cols-12 gap-12">
+      <div class="md:col-span-4">
+        <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 01 — About</p>
+        <h2 class="text-3xl md:text-4xl font-bold mt-3">Statistics → Computer Science →<br/>Population &amp; Humanitarian Data.</h2>
+        <p class="mt-5 text-sm" style="color:var(--text-muted);">
+          Two SUST Master's degrees, one applied mission: make protection data trustworthy enough
+          to act on, and analytical enough to forecast with.
+        </p>
+      </div>
+      <div class="md:col-span-8 grid sm:grid-cols-2 gap-5">
+        <div class="glass rounded-2xl p-6 card-hover">
+          <div class="w-11 h-11 rounded-xl grid place-items-center mb-4" style="background:rgba(20,184,166,.12); color:var(--teal);">
+            <i class="fa-solid fa-brain"></i>
           </div>
+          <h3 class="font-semibold">M.Sc. Computer Science &amp; Engineering</h3>
+          <p class="text-xs mt-1 font-mono" style="color:var(--text-dim);">SUST · final result pending</p>
+          <p class="text-sm mt-3" style="color:var(--text-muted);">Deep Learning, NLP and applied Machine Learning — extending statistical reasoning into computational methods for complex, high-dimensional and real-world data.</p>
+        </div>
+        <div class="glass rounded-2xl p-6 card-hover">
+          <div class="w-11 h-11 rounded-xl grid place-items-center mb-4" style="background:rgba(52,87,201,.14); color:var(--royal-light,#5B7FE0);">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h3 class="font-semibold">M.Sc. &amp; B.Sc. (Hons) Statistics</h3>
+          <p class="text-xs mt-1 font-mono" style="color:var(--text-dim);">SUST · 2022 / 2020</p>
+          <p class="text-sm mt-3" style="color:var(--text-muted);">Data Mining, Text Mining, Biostatistics and Advanced Statistical Inference — the methodological foundation for modeling, uncertainty assessment and evidence-based analysis.</p>
+        </div>
+        <div class="glass rounded-2xl p-6 card-hover sm:col-span-2">
+          <div class="w-11 h-11 rounded-xl grid place-items-center mb-4" style="background:rgba(20,184,166,.12); color:var(--teal);">
+            <i class="fa-solid fa-people-roof"></i>
+          </div>
+          <h3 class="font-semibold">Field-tested at scale</h3>
+          <p class="text-sm mt-3" style="color:var(--text-muted);">
+            From SRAC's skill-development programmes in Sylhet to UNHCR-funded Child Protection, GBV and
+            Community-Based Protection data across Cox's Bazar — every model recommendation is grounded in
+            what actually holds up when an enumerator is standing in a camp with patchy connectivity.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DATA PIPELINE VISUALIZER -->
+<section id="pipeline" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 02 — Research-to-Evidence Pipeline</p>
+    <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-2xl">From statistical foundations to field evidence.</h2>
+    <p class="mt-4 max-w-2xl text-sm" style="color:var(--text-muted);">
+      The same five stages that move a single household's data point from a tablet in a Rohingya camp
+      to a donor's decision desk — designed, deployed and maintained end-to-end.
+    </p>
+
+    <div class="relative mt-16">
+      <div class="pipe-rail hidden md:block"></div>
+      <div class="pipe-packet hidden md:block"></div>
+
+      <div class="grid md:grid-cols-5 gap-5 md:gap-4 relative">
+
+        <div class="pipe-node glass rounded-2xl p-5" style="border-top:2px solid var(--teal);">
+          <span class="pipe-num text-xs" style="color:var(--teal);">01</span>
+          <h3 class="font-semibold mt-2 text-sm">Collection</h3>
+          <p class="text-xs mt-2" style="color:var(--text-muted);">Structured field data collection with validation, skip logic and offline-aware workflows — making measurement quality part of the analytical process.</p>
+        </div>
+
+        <div class="pipe-node glass rounded-2xl p-5" style="border-top:2px solid var(--teal);">
+          <span class="pipe-num text-xs" style="color:var(--teal);">02</span>
+          <h3 class="font-semibold mt-2 text-sm">Processing &amp; DQA</h3>
+          <p class="text-xs mt-2" style="color:var(--text-muted);">Python and SQL workflows for data quality assessment, deduplication, consistency checks and confidentiality-aware processing.</p>
+        </div>
+
+        <div class="pipe-node glass rounded-2xl p-5" style="border-top:2px solid var(--royal);">
+          <span class="pipe-num text-xs" style="color:var(--royal-light,#5B7FE0);">03</span>
+          <h3 class="font-semibold mt-2 text-sm">System Integration</h3>
+          <p class="text-xs mt-2" style="color:var(--text-muted);">Integration of heterogeneous information systems, including ActivityInfo and CPIMS+, with attention to interoperability and reporting structure.</p>
+        </div>
+
+        <div class="pipe-node glass rounded-2xl p-5" style="border-top:2px solid var(--royal);">
+          <span class="pipe-num text-xs" style="color:var(--royal-light,#5B7FE0);">04</span>
+          <h3 class="font-semibold mt-2 text-sm">Analysis &amp; Modeling</h3>
+          <p class="text-xs mt-2" style="color:var(--text-muted);">Statistical inference, time-series modeling, spatial analysis and machine learning for patterns, prediction and uncertainty-aware analysis.</p>
+        </div>
+
+        <div class="pipe-node glass rounded-2xl p-5" style="border-top:2px solid var(--teal);">
+          <span class="pipe-num text-xs" style="color:var(--teal);">05</span>
+          <h3 class="font-semibold mt-2 text-sm">Decision Making</h3>
+          <p class="text-xs mt-2" style="color:var(--text-muted);">Reproducible analytical outputs, dashboards and decision-support interfaces that make model results interpretable to non-technical users.</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- 60-SECOND OVERVIEW -->
+<section id="overview" class="py-16 md:py-20" style="background:linear-gradient(180deg, rgba(45,212,191,.045), transparent);">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
+      <div>
+        <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 01 — 60-Second Overview</p>
+        <h2 class="text-3xl md:text-4xl font-bold mt-3">A professor should understand the whole profile in one minute.</h2>
+        <p class="mt-4 max-w-3xl text-sm md:text-base" style="color:var(--text-muted);">
+          Click through the four steps to see the research story, evidence and doctoral direction at a glance.
+        </p>
+      </div>
+      <div class="text-xs uppercase tracking-widest" style="color:var(--text-muted);">
+        4 steps · ~60 seconds
+      </div>
+    </div>
+
+    <div class="mt-9 glass rounded-3xl p-5 md:p-7">
+      <div class="grid md:grid-cols-4 gap-2" role="tablist" aria-label="60-second portfolio overview">
+        <button class="overview-tab active text-left rounded-2xl p-4" data-step="0" role="tab" aria-selected="true">
+          <span class="text-xs uppercase tracking-wider" style="color:var(--teal);">01</span>
+          <span class="block font-semibold mt-1">Foundation</span>
+          <span class="block text-xs mt-1" style="color:var(--text-muted);">Statistics → computing</span>
+        </button>
+        <button class="overview-tab text-left rounded-2xl p-4" data-step="1" role="tab" aria-selected="false">
+          <span class="text-xs uppercase tracking-wider" style="color:var(--teal);">02</span>
+          <span class="block font-semibold mt-1">Evidence</span>
+          <span class="block text-xs mt-1" style="color:var(--text-muted);">Research + field systems</span>
+        </button>
+        <button class="overview-tab text-left rounded-2xl p-4" data-step="2" role="tab" aria-selected="false">
+          <span class="text-xs uppercase tracking-wider" style="color:var(--teal);">03</span>
+          <span class="block font-semibold mt-1">Questions</span>
+          <span class="block text-xs mt-1" style="color:var(--text-muted);">Problems worth studying</span>
+        </button>
+        <button class="overview-tab text-left rounded-2xl p-4" data-step="3" role="tab" aria-selected="false">
+          <span class="text-xs uppercase tracking-wider" style="color:var(--teal);">04</span>
+          <span class="block font-semibold mt-1">PhD Direction</span>
+          <span class="block text-xs mt-1" style="color:var(--text-muted);">Public Health + Applied ML/NLP</span>
+        </button>
+      </div>
+
+      <div class="mt-6 grid lg:grid-cols-[1.2fr_.8fr] gap-6 items-stretch">
+        <div class="rounded-2xl p-6 md:p-8" style="background:rgba(255,255,255,.025);border:1px solid var(--border);">
+          <div id="overview-content"></div>
+        </div>
+
+        <div class="rounded-2xl p-6" style="background:rgba(45,212,191,.045);border:1px solid rgba(45,212,191,.16);">
+          <p class="text-xs uppercase tracking-widest" style="color:var(--teal);">At a glance</p>
+          <div class="grid grid-cols-2 gap-4 mt-5">
+            <div>
+              <div class="text-2xl font-bold">2</div>
+              <div class="text-xs mt-1" style="color:var(--text-muted);">Master's degrees</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold">1</div>
+              <div class="text-xs mt-1" style="color:var(--text-muted);">Peer-reviewed publication</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold">26</div>
+              <div class="text-xs mt-1" style="color:var(--text-muted);">Refugee camps supported</div>
+            </div>
+            <div>
+              <div class="text-2xl font-bold">~40%</div>
+              <div class="text-xs mt-1" style="color:var(--text-muted);">Reporting overhead reduction</div>
+            </div>
+          </div>
+          <div class="mt-5 pt-5" style="border-top:1px solid var(--border);">
+              <p class="text-xs uppercase tracking-widest" style="color:var(--teal);">Protection case-management</p>
+              <p class="text-sm font-medium leading-relaxed mt-2"><span class="text-2xl font-bold">~4,500</span> protection cases managed</p>
+            </div>
+            <div class="mt-6 pt-5" style="border-top:1px solid var(--border);">
+            <p class="text-xs uppercase tracking-widest" style="color:var(--teal);">Research identity</p>
+            <p class="text-sm font-medium leading-relaxed mt-2">
+              Public Health · Biostatistics · Applied ML · NLP · Humanitarian Data
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .overview-tab {
+    border: 1px solid transparent;
+    transition: all .2s ease;
+  }
+  .overview-tab:hover {
+    background: rgba(255,255,255,.035);
+    border-color: var(--border);
+  }
+  .overview-tab.active {
+    background: rgba(45,212,191,.08);
+    border-color: rgba(45,212,191,.25);
+  }
+  .overview-fade {
+    animation: overviewFade .22s ease;
+  }
+  @keyframes overviewFade {
+    from { opacity: .15; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
+<script>
+(function () {
+  const steps = [
+    {
+      kicker: "Foundation",
+      title: "A statistical foundation expanded into computational research.",
+      body: "Formal training in Statistics and Biostatistics at <strong>Shahjalal University of Science and Technology (SUST), Sylhet, Bangladesh</strong> provides the methodological base. Computer Science & Engineering, machine learning, deep learning and NLP extend that foundation toward computational data analysis.",
+      tags: ["Statistics", "Biostatistics", "Machine Learning", "NLP"]
+    },
+    {
+      kicker: "Evidence",
+      title: "Research experience connects methods to real population data.",
+      body: "Research projects in time-series forecasting, GIS/statistical analysis and Bengali NLP are complemented by humanitarian information-management work across 26 Rohingya refugee camps, including sensitive population-data systems. I have also managed information related to approximately <strong>4,500 child-protection case records</strong> in case-management workflows, giving me practical experience with large-scale, sensitive protection data.",
+      tags: ["Time Series", "GIS", "Bengali NLP", "Humanitarian Data"]
+    },
+    {
+      kicker: "Questions",
+      title: "The next step is not a list of tools—it is a set of research questions.",
+      body: "I am interested in reliable population-health inference, spatial and temporal variation, the responsible use of statistical learning, and learning from sensitive data when observations are incomplete or operationally constrained.",
+      tags: ["Population Health", "Spatial & Temporal Data", "Statistical Learning", "Responsible Data"]
+    },
+    {
+      kicker: "PhD Direction",
+      title: "Developing deeper expertise in Biostatistics and Population Health Data Science.",
+      body: "A PhD would allow me to strengthen biostatistical modeling, longitudinal and spatial methods, uncertainty and missing-data analysis, while drawing on my computational and humanitarian experience.",
+      tags: ["Biostatistics", "Population Health", "Statistical Modeling", "Data Science"]
+    }
+  ];
+
+  const content = document.getElementById("overview-content");
+  const tabs = Array.from(document.querySelectorAll(".overview-tab"));
+
+  function render(i) {
+    const s = steps[i];
+    content.className = "overview-fade";
+    content.innerHTML = `
+      <p class="text-xs uppercase tracking-widest" style="color:var(--teal);">${s.kicker}</p>
+      <h3 class="text-2xl md:text-3xl font-bold mt-3 leading-tight">${s.title}</h3>
+      <p class="text-sm md:text-base leading-7 mt-5" style="color:var(--text-muted);">${s.body}</p>
+      <div class="flex flex-wrap gap-2 mt-6">
+        ${s.tags.map(t => `<span class="badge text-[11px] px-2.5 py-1 rounded-full">${t}</span>`).join("")}
+      </div>
+    `;
+    tabs.forEach((tab, idx) => {
+      const active = idx === i;
+      tab.classList.toggle("active", active);
+      tab.setAttribute("aria-selected", active ? "true" : "false");
+    });
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => render(Number(tab.dataset.step)));
+  });
+
+  render(0);
+})();
+</script>
+
+<!-- RESEARCH FOCUS -->
+<section id="research" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 03 — PhD Research Agenda</p>
+    <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-4xl">From statistical foundations to population health, humanitarian and responsible data science.</h2>
+    <p class="mt-5 max-w-4xl text-sm md:text-base" style="color:var(--text-muted);">
+      My research interests sit at the intersection of <span style="color:var(--text);">Statistics,
+      Biostatistics, Population Health and Data Science</span>, with particular interest in complex
+      population data arising in public-health and humanitarian settings. My previous work provides
+      foundations in statistical inference, time-series analysis, GIS, machine learning, NLP and
+      humanitarian information systems; doctoral study would allow me to develop deeper methodological
+      expertise and contribute to rigorous research in these areas.
+    </p>
+
+    <div class="mt-14">
+      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// Research Questions</p>
+      <h3 class="text-2xl font-semibold mt-3 max-w-3xl">Questions I want to learn how to answer rigorously.</h3>
+      <div class="grid md:grid-cols-2 gap-5 mt-7">
+        <div class="glass rounded-2xl p-6 card-hover">
+          <span class="badge text-[11px] px-2 py-1 rounded-full">01 · POPULATION HEALTH</span>
+          <p class="text-lg leading-relaxed mt-4">How can we make reliable public-health inferences when health data are incomplete, unevenly distributed, or collected under difficult field conditions?</p>
+        </div>
+        <div class="glass rounded-2xl p-6 card-hover">
+          <span class="badge text-[11px] px-2 py-1 rounded-full">02 · SPATIAL &amp; TEMPORAL DATA</span>
+          <p class="text-lg leading-relaxed mt-4">How can spatial and temporal information improve our understanding of changing health and protection outcomes?</p>
+        </div>
+        <div class="glass rounded-2xl p-6 card-hover">
+          <span class="badge text-[11px] px-2 py-1 rounded-full">03 · STATISTICAL LEARNING</span>
+          <p class="text-lg leading-relaxed mt-4">When can applied machine learning add value to biostatistical methods without sacrificing interpretability or appropriate uncertainty?</p>
+        </div>
+        <div class="glass rounded-2xl p-6 card-hover">
+          <span class="badge text-[11px] px-2 py-1 rounded-full">04 · SENSITIVE DATA</span>
+          <p class="text-lg leading-relaxed mt-4">How can we learn from sensitive population data while reducing privacy risks and protecting vulnerable groups?</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-16">
+      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// Potential Doctoral Directions</p>
+      <h3 class="text-2xl font-semibold mt-3 max-w-3xl">Areas I would like to develop through doctoral training.</h3>
+      <p class="mt-4 max-w-4xl text-sm" style="color:var(--text-muted);">
+        These are intentionally presented as directions rather than fixed claims of expertise. The final
+        research question and methodology would be shaped by the doctoral supervisor, research group,
+        available data and the scientific problem being investigated.
+      </p>
+
+      <div class="grid md:grid-cols-2 gap-5 mt-8">
+        <article class="glass rounded-2xl p-7 card-hover">
+          <span class="badge text-[11px] px-2 py-1 rounded-full">DIRECTION 01</span>
+          <h4 class="font-semibold text-lg mt-4">Public Health &amp; Biostatistics</h4>
+          <p class="text-sm mt-3" style="color:var(--text-muted);">Developing deeper expertise in statistical modeling, population-health inference, longitudinal analysis, survey methods and statistical learning for real-world health data.</p>
+          <p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Possible settings:</strong> public health, global health, refugee health, health inequalities and resource-constrained populations.</p>
+        </article>
+
+        <article class="glass rounded-2xl p-7 card-hover">
+          <span class="badge text-[11px] px-2 py-1 rounded-full">DIRECTION 02</span>
+          <h4 class="font-semibold text-lg mt-4">Spatial &amp; Temporal Population Modeling</h4>
+          <p class="text-sm mt-3" style="color:var(--text-muted);">Building on my earlier experience with GIS and time-series analysis to develop stronger expertise in spatial statistics, longitudinal modeling and, where appropriate, spatio-temporal methods.</p>
+          <p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Possible settings:</strong> disease patterns, service access, environmental exposure, displacement and population outcomes.</p>
+        </article>
+
+        <article class="glass rounded-2xl p-7 card-hover">
+          <span class="badge text-[11px] px-2 py-1 rounded-full">DIRECTION 03</span>
+          <h4 class="font-semibold text-lg mt-4">Humanitarian &amp; Population Data Analytics</h4>
+          <p class="text-sm mt-3" style="color:var(--text-muted);">Investigating how statistical and data-science methods can support evidence generation in humanitarian and resource-constrained settings where data quality, missingness and operational constraints affect inference.</p>
+          <p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Possible settings:</strong> displaced populations, protection, health services, crisis response and community-level outcomes.</p>
+        </article>
+
+        <article class="glass rounded-2xl p-7 card-hover">
+          <span class="badge text-[11px] px-2 py-1 rounded-full">DIRECTION 04</span>
+          <h4 class="font-semibold text-lg mt-4">Applied Machine Learning &amp; NLP for Population Data</h4>
+          <p class="text-sm mt-3" style="color:var(--text-muted);">Exploring how machine learning can be used responsibly with sensitive population data, with attention to privacy, bias, uncertainty, interpretability and reproducibility.</p>
+          <p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Possible settings:</strong> public health, child digital safety, humanitarian protection and other high-stakes data environments.</p>
         </article>
       </div>
-    </section>
-
-    <section id="projects">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">03 · Selected projects</p>
-          <h2>Applied work and research experience</h2>
-          <p class="section-intro">The entries below describe work areas and projects reflected in my academic and professional background. Detailed results, code, and datasets will be linked when they are available and appropriate to share. No confidential case-level information is published here.</p>
-        </div>
-        <div class="grid grid-2">
-          <article class="card">
-            <p class="label">Professional systems · Humanitarian information management</p>
-            <h3>Protection Information Management Systems</h3>
-            <p>Designed and supported web-based information-management systems and workflows related to Child Protection, Gender-Based Violence (GBV), and Community-Based Protection within a UNHCR-funded programme in Cox’s Bazar.</p>
-            <p><strong>Relevant work:</strong> structured data workflows, validation, data-quality checks, reporting, information-system coordination, and support for operational users.</p>
-            <p><strong>Research connection:</strong> these experiences raised practical questions about data completeness, interoperability, privacy, and the reliability of analysis when records are generated under operational constraints.</p>
-            <div class="tagrow"><span class="tag teal">Information management</span><span class="tag">Data quality</span><span class="tag">CPIMS+</span><span class="tag">ActivityInfo</span></div>
-            <p class="disclaimer" style="margin-top:14px">Operational work; not presented as a peer-reviewed research study. System details and data are restricted where necessary for confidentiality.</p>
-          </article>
-          <article class="card">
-            <p class="label">Research project · Bengali NLP</p>
-            <h3>Bengali Math-Quest</h3>
-            <p>A Bengali-language mathematics question-answering project exploring the use of computational language methods for a domain-specific task in a lower-resource language.</p>
-            <p><strong>Research questions to document:</strong> how the task and dataset were constructed, which models were evaluated, how train/test separation was handled, and how answer quality was measured.</p>
-            <p class="disclaimer">This entry is a project description, not a second publication claim. Add a paper, repository, and numerical results only when the corresponding materials can be verified and shared.</p>
-            <div class="tagrow"><span class="tag blue">Bengali NLP</span><span class="tag">Question answering</span><span class="tag">Deep learning</span></div>
-          </article>
-          <article class="card">
-            <p class="label">Research experience · Digital safety</p>
-            <h3>Digital Privacy &amp; Security for Children</h3>
-            <p>Research-internship experience at Leading University focused on digital privacy and security for children. This work connects quantitative research interests with questions about sensitive data and responsible technology.</p>
-            <p><strong>To document in a future project brief:</strong> the research question, study design, data source, analytical methods, personal contribution, and any resulting report or presentation.</p>
-            <div class="tagrow"><span class="tag teal">Digital privacy</span><span class="tag">Child safety</span><span class="tag">Quantitative research</span></div>
-          </article>
-          <article class="card">
-            <p class="label">Statistical analysis · Project work</p>
-            <h3>Time-Series and Spatial Analysis</h3>
-            <p>My project work has included a rainfall-forecasting analysis using SARIMA in R and a GIS-oriented analysis of geographic variation in COVID-19 risk in Bangladesh.</p>
-            <p><strong>Academic standard:</strong> each project should be accompanied by its data source, analysis period, model specification, validation procedure, actual findings, and limitations before being treated as a research output.</p>
-            <div class="tagrow"><span class="tag blue">R</span><span class="tag">SARIMA</span><span class="tag">GIS</span><span class="tag">Spatial analysis</span></div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="proposed">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">04 · Proposed research</p>
-          <h2>A question for future independent work</h2>
-          <p class="section-intro">This is a proposed project direction, not a claim of completed research.</p>
-        </div>
-        <article class="card">
-          <p class="label">Proposed reproducible study</p>
-          <h3>How Missing Data and Measurement Error Affect Population-Risk Estimates</h3>
-          <p><strong>Research question:</strong> how do different patterns of missingness and measurement error affect population-level estimates and the predictive performance of statistical models?</p>
-          <p><strong>Potential approach:</strong> use an ethically shareable public or synthetic dataset; define controlled missingness scenarios; compare suitable complete-case and imputation approaches; evaluate bias, uncertainty, calibration, and predictive performance; and report sensitivity analyses.</p>
-          <p><strong>Planned outputs:</strong> a research brief, reproducible code, documented data provenance, figures and tables, and a transparent discussion of limitations.</p>
-          <div class="tagrow"><span class="tag teal">Missing-data methods</span><span class="tag">Reproducible research</span><span class="tag">Statistical modeling</span><span class="tag">Sensitivity analysis</span></div>
-        </article>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">05 · Professional experience</p>
-          <h2>From statistical training to field information systems</h2>
-          <p class="section-intro">My professional experience combines programme information management, data workflows, reporting, and applied research exposure.</p>
-        </div>
-        <div class="card timeline">
-          <div class="timeline-item">
-            <div class="date">Jan 2026 – Jun 2026</div>
-            <div><div class="role">Senior Officer – Information Management</div><div class="org">CODEC EPRC · UNHCR-funded programme · Cox’s Bazar, Bangladesh</div></div>
-          </div>
-          <div class="timeline-item">
-            <div class="date">Jan 2025 – Dec 2025</div>
-            <div><div class="role">Information Management Manager</div><div class="org">CODEC EPRC · UNHCR-funded programme · Cox’s Bazar, Bangladesh</div></div>
-          </div>
-          <div class="timeline-item">
-            <div class="date">Sep 2024 – Dec 2024</div>
-            <div><div class="role">Information Management Specialist</div><div class="org">CODEC EPRC · Cox’s Bazar, Bangladesh</div></div>
-          </div>
-          <div class="timeline-item">
-            <div class="date">Jun 2022 – Jun 2024</div>
-            <div><div class="role">Research Intern – Digital Privacy &amp; Security for Children</div><div class="org">Leading University · Sylhet, Bangladesh</div></div>
-          </div>
-          <div class="timeline-item">
-            <div class="date">Feb 2020 – May 2022</div>
-            <div><div class="role">Information Management Officer</div><div class="org">SRAC · Sylhet, Bangladesh</div></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="education">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">06 · Education</p>
-          <h2>Academic preparation</h2>
-          <p class="section-intro">Completed qualifications are listed separately from incomplete graduate coursework. Grades and degree status are stated transparently.</p>
-        </div>
-        <div class="education">
-          <article class="education-item">
-            <h3>M.Sc. in Statistics</h3>
-            <p>Shahjalal University of Science and Technology (SUST), Bangladesh · 2022</p>
-            <p><strong>CGPA:</strong> 2.81/4.00</p>
-          </article>
-          <article class="education-item">
-            <h3>B.Sc. (Honours) in Statistics</h3>
-            <p>Shahjalal University of Science and Technology (SUST), Bangladesh · 2020</p>
-            <p><strong>CGPA:</strong> 2.94/4.00</p>
-          </article>
-          <article class="education-item coursework">
-            <h3>Graduate-level coursework in Computer Science &amp; Engineering</h3>
-            <p>Shahjalal University of Science and Technology (SUST), Bangladesh · Degree incomplete</p>
-            <p><strong>Completed courses:</strong> Deep Learning, Digital Image Processing, Natural Language Processing, and Research Methodology.</p>
-            <p class="disclaimer">This coursework is supplementary academic preparation and is not a completed master's degree.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="skills">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">07 · Methods &amp; tools</p>
-          <h2>Technical preparation</h2>
-          <p class="section-intro">Tools are listed to describe my applied preparation. They should not be interpreted as equivalent levels of expertise in every method or platform.</p>
-        </div>
-        <div class="grid grid-3">
-          <article class="card skill-group">
-            <h3>Statistics &amp; analysis</h3>
-            <p>Statistical inference, descriptive analysis, hypothesis testing, survey data, time-series analysis, and quantitative reporting.</p>
-          </article>
-          <article class="card skill-group">
-            <h3>Data workflows</h3>
-            <p>Excel, data validation, quality checks, structured reporting, SQL/MySQL, and data-management workflows.</p>
-          </article>
-          <article class="card skill-group">
-            <h3>Programming &amp; computation</h3>
-            <p>Python and R for analysis and scripting; JavaScript and web technologies for information-system prototypes.</p>
-          </article>
-          <article class="card skill-group">
-            <h3>Visualization &amp; GIS</h3>
-            <p>Power BI, dashboard development, GIS-based mapping, and spatial data presentation.</p>
-          </article>
-          <article class="card skill-group">
-            <h3>Humanitarian information systems</h3>
-            <p>Experience with ActivityInfo, CPIMS+, KoboToolbox/XLSForm workflows, data quality, and programme reporting.</p>
-          </article>
-          <article class="card skill-group">
-            <h3>Computational research interests</h3>
-            <p>Deep learning, NLP, statistical learning, and responsible use of sensitive data; further methodological development is a doctoral goal.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="wrap">
-        <div class="section-head">
-          <p class="eyebrow">08 · Contact</p>
-          <h2>Research discussion and doctoral opportunities</h2>
-          <p class="section-intro">I welcome conversations about research fit, methodological training, and doctoral opportunities related to biostatistics, population health data science, and responsible analysis of complex population data.</p>
-        </div>
-        <div class="card">
-          <p><strong>Nayeem Sarker</strong><br><span class="muted">Cumilla, Bangladesh</span></p>
-          <p><a href="mailto:nayeemsarker.sta.sust.bd@gmail.com">nayeemsarker.sta.sust.bd@gmail.com</a></p>
-          <div class="actions">
-            <a class="btn btn-primary" href="mailto:nayeemsarker.sta.sust.bd@gmail.com?subject=Research%20Discussion">Email about research</a>
-            <a class="btn btn-secondary" href="assets/Nayeem_Sarker_PhD_Academic_CV.pdf" target="_blank" rel="noopener">Academic CV ↗</a>
-            <a class="btn btn-secondary" href="https://github.com/nayeemEmolin" target="_blank" rel="noopener">GitHub ↗</a>
-            <a class="btn btn-secondary" href="https://www.linkedin.com/in/nayeem-sarker-44a31439a/" target="_blank" rel="noopener">LinkedIn ↗</a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="wrap footer-row">
-      <span>© <span id="year"></span> Nayeem Sarker · Research portfolio</span>
-      <span>Accurate qualifications · Reproducible research · Responsible data use</span>
     </div>
-  </footer>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+
+    <div class="mt-16 grid lg:grid-cols-3 gap-5">
+      <div class="glass rounded-2xl p-7">
+        <p class="eyebrow text-xs uppercase" style="color:var(--teal);">Current foundation</p>
+        <h3 class="font-semibold mt-3">What I already bring</h3>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">Statistical inference, biostatistics, time-series analysis, GIS, machine learning, NLP, data systems and field-based humanitarian information management.</p>
+      </div>
+      <div class="glass rounded-2xl p-7">
+        <p class="eyebrow text-xs uppercase" style="color:var(--teal);">Doctoral development</p>
+        <h3 class="font-semibold mt-3">What I want to deepen</h3>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">Biostatistical modeling, spatial and longitudinal methods, statistical learning, uncertainty, missing-data methods and rigorous study design.</p>
+      </div>
+      <div class="glass rounded-2xl p-7">
+        <p class="eyebrow text-xs uppercase" style="color:var(--teal);">Long-term aim</p>
+        <h3 class="font-semibold mt-3">What I hope to contribute</h3>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">Reproducible and statistically defensible methods for complex population data, with practical relevance to public health and humanitarian decision-making.</p>
+      </div>
+    </div>
+
+    <div class="mt-16">
+      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// Research Environment</p>
+      <h3 class="text-2xl font-semibold mt-3 max-w-3xl">Open to interdisciplinary doctoral supervision.</h3>
+      <p class="mt-4 max-w-4xl text-sm" style="color:var(--text-muted);">
+        I am particularly interested in research groups spanning <span style="color:var(--text);">Biostatistics,
+        Epidemiology, Population Health, Health Data Science, Statistics, Data Science, GIS/GeoAI and
+        Humanitarian Research</span>. I value methodological rigor, reproducible research and problems where
+        statistical evidence can improve understanding of real-world populations.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DASHBOARDS / SHINY -->
+<section id="dashboards" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 04 — Research Translation & Computational Systems</p>
+    <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-2xl">Computational systems built to turn real-world data into analysis and evidence.</h2>
+    <p class="mt-4 max-w-2xl text-sm" style="color:var(--text-muted);">I design and develop information systems that structure complex real-world
+      data for analysis, monitoring, research and evidence generation. These
+      systems bridge statistical and computational methods with operational data,
+      creating practical environments in which research questions can be
+      investigated and translated into usable evidence.</p>
+
+    <div class="grid lg:grid-cols-2 gap-6 mt-12">
+
+      <div class="glass-strong rounded-2xl overflow-hidden card-hover">
+        <div class="aspect-video relative" style="background:var(--bg2);">
+          <iframe src="https://nayeememolin.github.io/eprc.cpims.com/" title="EPRC CPIMS Demo IMS" loading="lazy" class="absolute inset-0 w-full h-full border-0"></iframe>
+        </div>
+        <div class="p-6">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="badge text-[11px] px-2 py-1 rounded-full">React / JS</span>
+            <span class="badge text-[11px] px-2 py-1 rounded-full">Firebase</span>
+            <span class="badge text-[11px] px-2 py-1 rounded-full">CPIMS+ aligned</span>
+          </div>
+          <h3 class="font-semibold">Demo Protection IMS (EPRC · CPIMS)</h3>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">Demonstrates the full data lifecycle from collection and quality assurance to structured analytical outputs in a 26-camp Child Protection context.</p>
+          <div class="flex gap-4 mt-4 text-sm">
+            <a href="https://nayeememolin.github.io/eprc.cpims.com/" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--teal);"><i class="fa-solid fa-play"></i> Live demo</a>
+            <a href="https://github.com/nayeemEmolin" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--text-muted);"><i class="fa-brands fa-github"></i> Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-strong rounded-2xl overflow-hidden card-hover">
+        <div class="aspect-video relative" style="background:var(--bg2);">
+          <iframe src="https://nayeememolin.github.io/bid-system/BID_Project/index.html" title="BID MIS Demo" loading="lazy" class="absolute inset-0 w-full h-full border-0"></iframe>
+        </div>
+        <div class="p-6">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="badge text-[11px] px-2 py-1 rounded-full">MIS</span>
+            <span class="badge text-[11px] px-2 py-1 rounded-full">Referral tracking</span>
+          </div>
+          <h3 class="font-semibold">Demo BID MIS System</h3>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">Demonstrates how structured case data, indicator definitions and field workflows shape the quality and usability of downstream analysis.</p>
+          <div class="flex gap-4 mt-4 text-sm">
+            <a href="https://nayeememolin.github.io/bid-system/BID_Project/index.html" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--teal);"><i class="fa-solid fa-play"></i> Live demo</a>
+            <a href="https://github.com/nayeemEmolin" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--text-muted);"><i class="fa-brands fa-github"></i> Repo</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="glass-strong rounded-2xl overflow-hidden card-hover">
+        <div class="aspect-video relative" style="background:var(--bg2);">
+          <iframe src="https://nayeememolin.github.io/bia-universe/BIA_World/index.html" title="BIA MIS Demo" loading="lazy" class="absolute inset-0 w-full h-full border-0"></iframe>
+        </div>
+        <div class="p-6">
+          <div class="flex flex-wrap gap-2 mb-3">
+            <span class="badge text-[11px] px-2 py-1 rounded-full">MIS</span>
+            <span class="badge text-[11px] px-2 py-1 rounded-full">Case management</span>
+          </div>
+          <h3 class="font-semibold">Demo BIA MIS System</h3>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">Demonstrates a structured protection-information workflow and the interoperability challenges that motivate research in humanitarian informatics.</p>
+          <div class="flex gap-4 mt-4 text-sm">
+            <a href="https://nayeememolin.github.io/bia-universe/BIA_World/index.html" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--teal);"><i class="fa-solid fa-play"></i> Live demo</a>
+            <a href="https://github.com/nayeemEmolin" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--text-muted);"><i class="fa-brands fa-github"></i> Repo</a>
+          </div>
+        </div>
+      </div>
+
+<!-- AFTER: Live Embedded R Shiny Dashboard -->
+<div class="glass-strong rounded-2xl overflow-hidden card-hover">
+  <div class="aspect-video relative" style="background:var(--bg2);">
+    <iframe src="https://01a03f71-b15a-fa2a-43e9-e49a9cbafa25.share.connect.posit.cloud/" title="Child Protection Case Analytics Dashboard" loading="lazy" class="absolute inset-0 w-full h-full border-0"></iframe>
+  </div>
+  <div class="p-6">
+    <div class="flex flex-wrap gap-2 mb-3">
+      <span class="badge text-[11px] px-2 py-1 rounded-full">R Shiny</span>
+      <span class="badge text-[11px] px-2 py-1 rounded-full">Posit Connect</span>
+      <span class="badge text-[11px] px-2 py-1 rounded-full">Child Protection</span>
+    </div>
+    <h3 class="font-semibold">Child Protection Case Analytics Dashboard</h3>
+    <p class="text-sm mt-2" style="color:var(--text-muted);">Interactive R Shiny environment for exploring protection indicators, case closures, risk levels and demographic patterns across refugee-camp locations.</p>
+    <div class="flex gap-4 mt-4 text-sm">
+      <a href="https://01a03f71-b15a-fa2a-43e9-e49a9cbafa25.share.connect.posit.cloud/" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--teal);"><i class="fa-solid fa-play"></i> Live demo</a>
+      <a href="https://github.com/nayeemEmolin" target="_blank" rel="noopener" class="inline-flex items-center gap-2" style="color:var(--text-muted);"><i class="fa-brands fa-github"></i> Repo</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 05 — Research Evidence</p>
+    <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-3xl">Projects framed as research questions, methods and evidence.</h2>
+    <p class="mt-5 max-w-3xl text-sm md:text-base" style="color:var(--text-muted);">
+      These projects form a progression from statistical modeling and spatial analysis to machine learning,
+      low-resource NLP and humanitarian information systems. Together they show how research questions emerged
+      from increasingly complex data environments.
+    </p>
+
+    <div class="grid md:grid-cols-2 gap-5 mt-12">
+
+      <article class="project-card glass rounded-2xl p-7 card-hover" data-cat="statistics time-series">
+        <span class="badge text-[11px] px-2 py-1 rounded-full">STATISTICAL MODELING · TIME SERIES</span>
+        <h3 class="font-semibold text-lg mt-4">Rainfall Forecasting in Sylhet District</h3>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Research question.</strong>
+          Can seasonal time-series structure be used to forecast district-level rainfall and characterize
+          temporal variation in an environmental process?
+        </p>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Approach.</strong>
+          Implemented a SARIMA forecasting model in R, using statistical time-series methodology to represent
+          trend and seasonal dynamics.
+        </p>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Research significance.</strong>
+          This project established an early foundation for the spatio-temporal and predictive modeling direction
+          that now motivates my doctoral interests in complex crisis data.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="badge text-[11px] px-2 py-1 rounded-full">R</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">SARIMA</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">Time Series</span>
+        </div>
+      </article>
+
+      <article class="project-card glass rounded-2xl p-7 card-hover" data-cat="statistics gis">
+        <span class="badge text-[11px] px-2 py-1 rounded-full">SPATIAL ANALYSIS · GIS</span>
+        <h3 class="font-semibold text-lg mt-4">Spatial Analysis of COVID-19 Transmission Risk</h3>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Research question.</strong>
+          How does COVID-19 transmission risk vary geographically across Bangladesh, and where do spatial
+          patterns indicate comparatively higher-risk areas?
+        </p>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Approach.</strong>
+          Combined district-level GIS mapping with inferential statistical analysis to examine spatial variation
+          in transmission risk.
+        </p>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Research significance.</strong>
+          The work connected statistical inference with geographic structure and provided an early basis for
+          thinking about spatial dependence in population-level data.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="badge text-[11px] px-2 py-1 rounded-full">GIS</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">Statistics</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">Spatial Analysis</span>
+        </div>
+      </article>
+
+      <article class="project-card glass rounded-2xl p-7 card-hover" data-cat="nlp ai">
+        <span class="badge text-[11px] px-2 py-1 rounded-full">NLP · DEEP LEARNING</span>
+        <h3 class="font-semibold text-lg mt-4">Bengali Math-Quest</h3>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Research question.</strong>
+          How can deep-learning methods be applied to question answering in Bengali, an under-resourced
+          language, using a domain-specific mathematical task?
+        </p>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Approach.</strong>
+          Developed a Bengali-language mathematics question-answering system using Python and TensorFlow,
+          connecting language processing with neural modeling.
+        </p>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Research significance.</strong>
+          The project provides the computational starting point for my current interest in low-resource NLP,
+          data-efficient learning and multilingual AI.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="badge text-[11px] px-2 py-1 rounded-full">Python</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">TensorFlow</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">Bengali NLP</span>
+        </div>
+      </article>
+
+      <article class="project-card glass rounded-2xl p-7 card-hover" data-cat="humanitarian pim">
+        <span class="badge text-[11px] px-2 py-1 rounded-full">HUMANITARIAN INFORMATICS</span>
+        <h3 class="font-semibold text-lg mt-4">Protection Information Management Systems</h3>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Research problem.</strong>
+          How can sensitive, heterogeneous protection data be collected, validated, integrated and translated
+          into reliable evidence under operational constraints across a large humanitarian programme?
+        </p>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Approach.</strong>
+          Designed and supported three web-based information-management systems spanning Child Protection,
+          GBV and Community-Based Protection, alongside KoboToolbox/XLSForm workflows, data-quality processes
+          and reporting systems across 26 Rohingya refugee camps.
+        </p>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Evidence and significance.</strong>
+          The systems reduced institutional reporting overhead by roughly 40%. More importantly for doctoral
+          research, the work exposed methodological challenges involving data quality, interoperability,
+          missingness, privacy and decision-making under operational uncertainty.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="badge text-[11px] px-2 py-1 rounded-full">Python</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">SQL</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">KoboToolbox</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">CPIMS+</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">ActivityInfo</span>
+        </div>
+      </article>
+
+      <article class="project-card glass rounded-2xl p-7 card-hover" data-cat="responsible-ai nlp gis">
+        <span class="badge text-[11px] px-2 py-1 rounded-full">PRIVACY · STATISTICS · GIS</span>
+        <h3 class="font-semibold text-lg mt-4">Digital Privacy &amp; Security for Children</h3>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Research question.</strong>
+          What factors are associated with children's digital privacy and security risks, and how can those
+          risks be examined quantitatively across populations and locations?
+        </p>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Approach.</strong>
+          Used statistical modeling, hypothesis testing, survey methods and GIS-based spatial analysis in
+          research conducted at Leading University, with computational methods supporting the analysis.
+        </p>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Research significance.</strong>
+          This work forms an early bridge between statistical analysis, sensitive population data and the
+          responsible-AI questions that now sit within my doctoral research agenda.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="badge text-[11px] px-2 py-1 rounded-full">Python</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">SPSS / STATA</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">GIS</span>
+        </div>
+      </article>
+
+      <article class="project-card glass rounded-2xl p-7 card-hover" data-cat="humanitarian pim data-science">
+        <span class="badge text-[11px] px-2 py-1 rounded-full">DATA QUALITY · DECISION SUPPORT</span>
+        <h3 class="font-semibold text-lg mt-4">Field-to-Evidence Data Workflow</h3>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Research problem.</strong>
+          How can field observations remain analytically trustworthy when data are collected offline,
+          produced by multiple actors and subsequently used for protection decisions?
+        </p>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Approach.</strong>
+          Developed validation-driven forms, Python/SQL cleaning workflows, structured integrations and
+          analytical dashboards connecting collection, quality assurance and reporting.
+        </p>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">
+          <strong style="color:var(--text);">Research significance.</strong>
+          The work motivates a broader methodological question at the heart of humanitarian informatics:
+          how should statistical and machine-learning methods account for the imperfections and constraints
+          of the systems that generate the data?
+        </p>
+        <div class="flex flex-wrap gap-2 mt-5">
+          <span class="badge text-[11px] px-2 py-1 rounded-full">Data Quality</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">Python / SQL</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">R Shiny</span>
+          <span class="badge text-[11px] px-2 py-1 rounded-full">Power BI</span>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATION -->
+<section id="publication" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+  <div class="max-w-6xl mx-auto px-6">
+    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 06 — Peer-Reviewed Publication</p>
+    <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-2xl">Published research: statistical and data-driven analysis.</h2>
+
+    <div class="glass-strong rounded-2xl p-8 mt-10 flex flex-col md:flex-row md:items-center gap-6 card-hover">
+      <div class="w-14 h-14 rounded-xl grid place-items-center shrink-0" style="background:rgba(20,184,166,.12); color:var(--teal);">
+        <i class="fa-solid fa-book-open text-xl"></i>
+      </div>
+      <div class="flex-1">
+        <h3 class="font-semibold text-lg">Forecast, Trend, Growth, and Instability of Internet Users in Bangladesh</h3>
+        <p class="text-sm mt-2" style="color:var(--text-muted);">Sarker, N., Sorkar, M. N. U., Sorkar, M. R. U., &amp; Uddin, M. T. (2022). <em>Computer Engineering and Intelligent Systems</em>, 13(4).</p>
+        <p class="font-mono text-xs mt-2" style="color:var(--text-dim);">DOI: 10.7176/CEIS/13-4-01</p>
+      </div>
+      <a href="https://iiste.org/Journals/index.php/CEIS/article/view/59330/61255" target="_blank" rel="noopener" class="btn-ghost px-5 py-2.5 rounded-full text-sm inline-flex items-center gap-2 whitespace-nowrap" style="color:var(--text);">
+        View DOI <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION / EXPERIENCE -->
+<section id="education" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+  <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-14">
+    <div>
+      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 07 — Education</p>
+      <h2 class="text-2xl md:text-3xl font-bold mt-3 mb-8">The methodological foundation</h2>
+      <div class="space-y-5">
+        <div class="glass rounded-xl p-5">
+          <div class="flex justify-between text-sm"><span class="font-semibold">M.Sc. Computer Science &amp; Engineering</span><span class="font-mono text-xs" style="color:var(--text-dim);">pending</span></div>
+          <p class="text-xs mt-1" style="color:var(--text-muted);">Shahjalal University of Science &amp; Technology (SUST)</p>
+        </div>
+        <div class="glass rounded-xl p-5">
+          <div class="flex justify-between text-sm"><span class="font-semibold">M.Sc. Statistics</span><span class="font-mono text-xs" style="color:var(--text-dim);">2022</span></div>
+          <p class="text-xs mt-1" style="color:var(--text-muted);">SUST — Data Mining, Text Mining, Biostatistics, Advanced Statistical Inference</p>
+        </div>
+        <div class="glass rounded-xl p-5">
+          <div class="flex justify-between text-sm"><span class="font-semibold">B.Sc. (Hons) Statistics</span><span class="font-mono text-xs" style="color:var(--text-dim);">2020</span></div>
+          <p class="text-xs mt-1" style="color:var(--text-muted);">Shahjalal University of Science &amp; Technology (SUST)</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 08 — Experience</p>
+      <h2 class="text-2xl md:text-3xl font-bold mt-3 mb-8">From statistical training to field research</h2>
+      <div class="relative pl-6 space-y-7" style="border-left:1px solid var(--border-strong);">
+        <div class="relative">
+          <span class="absolute -left-[27px] top-1 w-3 h-3 rounded-full" style="background:var(--teal);"></span>
+          <p class="text-xs font-mono" style="color:var(--text-dim);">Jan 2026 – Jun 2026</p>
+          <p class="font-semibold text-sm mt-1">Senior Officer, Information Management — UNHCR / CODEC EPRC</p>
+        </div>
+        <div class="relative">
+          <span class="absolute -left-[27px] top-1 w-3 h-3 rounded-full" style="background:var(--royal);"></span>
+          <p class="text-xs font-mono" style="color:var(--text-dim);">Jan 2025 – Dec 2025</p>
+          <p class="font-semibold text-sm mt-1">Information Management Manager — UNHCR / CODEC EPRC</p>
+        </div>
+        <div class="relative">
+          <span class="absolute -left-[27px] top-1 w-3 h-3 rounded-full" style="background:var(--teal);"></span>
+          <p class="text-xs font-mono" style="color:var(--text-dim);">Sep 2024 – Dec 2024</p>
+          <p class="font-semibold text-sm mt-1">Information Management Specialist — CODEC EPRC</p>
+        </div>
+        <div class="relative">
+          <span class="absolute -left-[27px] top-1 w-3 h-3 rounded-full" style="background:var(--royal);"></span>
+          <p class="text-xs font-mono" style="color:var(--text-dim);">Jun 2022 – Jun 2024</p>
+          <p class="font-semibold text-sm mt-1">Research Intern, Statistics &amp; Data Science — Leading University, Sylhet</p>
+        </div>
+        <div class="relative">
+          <span class="absolute -left-[27px] top-1 w-3 h-3 rounded-full" style="background:var(--teal);"></span>
+          <p class="text-xs font-mono" style="color:var(--text-dim);">Feb 2020 – May 2022</p>
+          <p class="font-semibold text-sm mt-1">Information Management Officer — SRAC, Sylhet</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+  <div class="max-w-4xl mx-auto px-6 text-center">
+
+    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">
+      // 09 — Get in touch
+    </p>
+
+    <h2 class="text-3xl md:text-5xl font-bold mt-3">
+      Seeking the right doctoral research environment.
+    </h2>
+
+    <p class="mt-5 text-sm md:text-base max-w-2xl mx-auto" style="color:var(--text-muted);">
+      I am seeking doctoral training at the intersection of
+      <span style="color:var(--text);">Public Health</span>,
+      <span style="color:var(--text);">Biostatistics</span>,
+      <span style="color:var(--text);">Applied Machine Learning</span>,
+      and
+      <span style="color:var(--text);">Natural Language Processing</span>.
+      My goal is to develop rigorous, reproducible methods for understanding
+      real-world population data, with particular interest in health and
+      resource-constrained settings.
+    </p>
+
+    <div class="flex flex-wrap justify-center gap-4 mt-10">
+
+      <a href="mailto:nayeemsarker.sta.sust.bd@gmail.com?subject=PhD%20Research%20Discussion"
+         class="btn-primary text-white px-7 py-3.5 rounded-full font-medium text-sm inline-flex items-center gap-2">
+        <i class="fa-solid fa-paper-plane"></i>
+        Discuss PhD Research
+      </a>
+
+      <a href="assets/Nayeem_Sarker_PhD_Academic_CV.pdf"
+         target="_blank"
+         rel="noopener"
+         class="btn-ghost px-7 py-3.5 rounded-full font-medium text-sm inline-flex items-center gap-2"
+         style="color:var(--text);">
+        <i class="fa-solid fa-file-arrow-down"></i>
+        Download Academic CV
+      </a>
+
+    </div>
+
+    <div class="flex flex-wrap justify-center gap-6 mt-10 text-sm" style="color:var(--text-muted);">
+
+      <a href="mailto:nayeemsarker.sta.sust.bd@gmail.com"
+         class="inline-flex items-center gap-2 nav-link">
+        <i class="fa-solid fa-envelope"></i>
+        nayeemsarker.sta.sust.bd@gmail.com
+      </a>
+
+      <a href="tel:+8801521407522"
+         class="inline-flex items-center gap-2 nav-link">
+        <i class="fa-solid fa-phone"></i>
+        +880 1521-407522
+      </a>
+
+      <span class="inline-flex items-center gap-2">
+        <i class="fa-solid fa-location-dot"></i>
+        Cumilla, Bangladesh
+      </span>
+
+    </div>
+
+  </div>
+</section>
+
+<footer class="py-10 border-t text-center text-xs" style="border-color:var(--border); color:var(--text-dim);">
+  <p>© <span id="year"></span> Nayeem Sarker. PhD research profile — Statistics → Computer Science → Humanitarian Informatics.</p>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Theme toggle (in-memory, defaults to dark)
+  const root = document.documentElement;
+  const themeIcon = document.getElementById('themeIcon');
+  root.setAttribute('data-theme', 'dark');
+  document.getElementById('themeToggle').addEventListener('click', () => {
+    const isLight = root.getAttribute('data-theme') === 'light';
+    root.setAttribute('data-theme', isLight ? 'dark' : 'light');
+    themeIcon.className = isLight ? 'fa-solid fa-moon text-sm' : 'fa-solid fa-sun text-sm';
+  });
+
+  // Project filtering
+  const filterBar = document.getElementById('filterBar');
+  const cards = document.querySelectorAll('.project-card');
+  filterBar.addEventListener('click', (e) => {
+    const btn = e.target.closest('.tab-btn');
+    if (!btn) return;
+    filterBar.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const filter = btn.dataset.filter;
+    cards.forEach(card => {
+      const cats = card.dataset.cat.split(' ');
+      const show = filter === 'all' || cats.includes(filter);
+      card.style.display = show ? '' : 'none';
+    });
+  });
+</script>
 </body>
 </html>
