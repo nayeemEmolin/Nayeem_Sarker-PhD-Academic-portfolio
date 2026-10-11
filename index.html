@@ -459,16 +459,36 @@
 
 <style>
   .overview-tab {
-    border: 1px solid transparent;
-    transition: all .2s ease;
+    border: 1px solid var(--border);
+    transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease, color .2s ease;
+    cursor: pointer;
   }
   .overview-tab:hover {
-    background: rgba(255,255,255,.035);
-    border-color: var(--border);
+    background: linear-gradient(120deg, var(--royal), var(--royal-deep));
+    border-color: var(--royal);
+    color: #fff;
+    box-shadow: 0 8px 26px -12px rgba(52,87,201,.85);
+    transform: translateY(-2px);
+  }
+  .overview-tab:hover span {
+    color: #fff !important;
+  }
+  .overview-tab:active {
+    transform: translateY(0) scale(.99);
+    box-shadow: 0 4px 14px -8px rgba(52,87,201,.8);
+  }
+  .overview-tab:focus-visible {
+    outline: 2px solid var(--royal);
+    outline-offset: 3px;
   }
   .overview-tab.active {
-    background: rgba(45,212,191,.08);
-    border-color: rgba(45,212,191,.25);
+    background: linear-gradient(120deg, var(--royal), var(--royal-deep));
+    border-color: var(--royal);
+    color: #fff;
+    box-shadow: 0 8px 28px -12px rgba(52,87,201,.8);
+  }
+  .overview-tab.active span {
+    color: #fff !important;
   }
   .overview-fade {
     animation: overviewFade .22s ease;
