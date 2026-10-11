@@ -77,6 +77,8 @@
     mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black 30%, transparent 75%);
   }
   .eyebrow{ letter-spacing:.18em; font-family:'Fira Code',monospace; }
+  /* Keep prose paragraphs consistently justified throughout the portfolio. */
+  p:not(.eyebrow){ text-align:justify; text-justify:inter-word; }
   .grad-text{
     background: linear-gradient(100deg, var(--teal) 0%, var(--royal) 60%, var(--teal) 100%);
     -webkit-background-clip:text; background-clip:text; color:transparent;
