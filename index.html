@@ -148,6 +148,51 @@
   }
   /* Left-align paragraph text only inside the five pipeline cards in Section 3. */
   #pipeline .pipe-node p{ text-align:left; text-justify:auto; }
+
+  /* Section 5: accessible research mind map */
+  #research .research-map { position:relative; }
+  #research .research-map-core {
+    max-width:760px; margin:0 auto; padding:1.4rem 1.6rem;
+    border:1px solid rgba(52,87,201,.55);
+    background:linear-gradient(135deg,rgba(52,87,201,.18),rgba(20,184,166,.08));
+    box-shadow:0 18px 48px -30px rgba(52,87,201,.75);
+    text-align:center; border-radius:1.25rem;
+  }
+  #research .research-map-stem { width:2px; height:28px; margin:0 auto; background:linear-gradient(var(--royal),var(--teal)); opacity:.8; }
+  #research .research-map-branches { position:relative; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1rem; }
+  #research .research-map-branches::before {
+    content:""; position:absolute; top:0; left:12.5%; right:12.5%; height:2px;
+    background:linear-gradient(90deg,rgba(52,87,201,.7),rgba(20,184,166,.75),rgba(52,87,201,.7));
+  }
+  #research .research-map-node-wrap { position:relative; padding-top:22px; min-width:0; }
+  #research .research-map-node-wrap::before { content:""; position:absolute; top:0; left:50%; height:22px; width:2px; transform:translateX(-50%); background:linear-gradient(var(--teal),var(--royal)); opacity:.8; }
+  #research .research-map-node {
+    display:block; height:100%; min-height:150px; padding:1.1rem 1rem;
+    border:1px solid var(--border-strong); border-radius:1rem; background:var(--surface);
+    color:var(--text); text-decoration:none;
+    transition:transform .22s ease,border-color .22s ease,box-shadow .22s ease,background .22s ease;
+  }
+  #research .research-map-node:hover { transform:translateY(-4px); border-color:var(--royal); background:linear-gradient(145deg,rgba(52,87,201,.17),var(--surface)); box-shadow:0 14px 34px -22px rgba(52,87,201,.85); }
+  #research .research-map-node:focus-visible { outline:2px solid var(--royal); outline-offset:3px; }
+  #research .research-map-node p { text-align:left; text-justify:auto; }
+  #research .research-map-node .node-number { display:inline-flex; align-items:center; justify-content:center; width:1.8rem; height:1.8rem; border-radius:999px; border:1px solid rgba(52,87,201,.55); color:var(--text); background:rgba(52,87,201,.15); font:600 .72rem 'Fira Code',monospace; margin-bottom:.8rem; }
+  #research .research-map-note { text-align:center !important; text-justify:auto !important; }
+  #research .research-structured p { text-align:left; text-justify:auto; }
+  @media (max-width:900px) {
+    #research .research-map-branches { grid-template-columns:repeat(2,minmax(0,1fr)); gap:.9rem; }
+    #research .research-map-branches::before { display:none; }
+    #research .research-map-node-wrap { padding-top:14px; }
+    #research .research-map-node-wrap::before { height:14px; }
+    #research .research-map-node { min-height:140px; }
+  }
+  @media (max-width:520px) {
+    #research .research-map-core { padding:1.1rem; }
+    #research .research-map-branches { grid-template-columns:1fr; gap:.65rem; }
+    #research .research-map-node-wrap { padding-top:12px; }
+    #research .research-map-node-wrap::before { height:12px; }
+    #research .research-map-node { min-height:0; padding:1rem; }
+  }
+
 </style>
 </head>
 <body class="antialiased" style="background-color:var(--bg); color:var(--text);">
@@ -563,33 +608,65 @@
 <section id="research" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
     <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 03 — PhD Research Agenda</p>
-    <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-4xl">From statistical foundations to population health, humanitarian and responsible data science.</h2>
+    <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-4xl">Statistical learning for population health and humanitarian data.</h2>
     <p class="mt-5 max-w-4xl text-sm md:text-base" style="color:var(--text-muted);">
-      My research interests sit at the intersection of <span style="color:var(--text);">Statistics,
-      Biostatistics, Population Health and Data Science</span>, with particular interest in complex
-      population data arising in public-health and humanitarian settings. My previous work provides
-      foundations in statistical inference, time-series analysis, GIS, machine learning, NLP and
-      humanitarian information systems; doctoral study would allow me to develop deeper methodological
-      expertise and contribute to rigorous research in these areas.
+      I am interested in how <span style="color:var(--text);">statistical methods, spatial-temporal analysis and responsible machine learning</span>
+      can improve understanding of population health and humanitarian challenges. My background in Statistics and field-based information systems provides a foundation; doctoral study is where I aim to deepen methodological expertise and develop focused research questions with a supervisor.
     </p>
 
-    <div class="mt-14">
-      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// Research Questions</p>
+    <div class="research-map mt-10" aria-label="Research mind map connecting the central research identity to four areas of interest">
+      <div class="research-map-core">
+        <p class="eyebrow text-xs uppercase" style="color:var(--teal);">CENTRAL RESEARCH IDENTITY</p>
+        <h3 class="text-xl md:text-2xl font-bold mt-2">Statistical Learning for Population Health &amp; Humanitarian Data</h3>
+        <p class="text-sm mt-3" style="color:var(--text-muted);text-align:center;text-justify:auto;">Four connected themes guide my developing doctoral interests.</p>
+      </div>
+      <div class="research-map-stem" aria-hidden="true"></div>
+      <div class="research-map-branches">
+        <div class="research-map-node-wrap">
+          <a class="research-map-node" href="#research-q1" aria-label="Explore biostatistics and population health research question">
+            <span class="node-number">01</span><h4 class="font-semibold text-base">Biostatistics &amp; Population Health</h4>
+            <p class="text-sm mt-2" style="color:var(--text-muted);">Reliable inference, incomplete data and health inequalities.</p>
+          </a>
+        </div>
+        <div class="research-map-node-wrap">
+          <a class="research-map-node" href="#research-q2" aria-label="Explore spatial and temporal modeling research question">
+            <span class="node-number">02</span><h4 class="font-semibold text-base">Spatial &amp; Temporal Modeling</h4>
+            <p class="text-sm mt-2" style="color:var(--text-muted);">Geographic patterns, change over time and population outcomes.</p>
+          </a>
+        </div>
+        <div class="research-map-node-wrap">
+          <a class="research-map-node" href="#research-q3" aria-label="Explore statistical learning and AI research question">
+            <span class="node-number">03</span><h4 class="font-semibold text-base">Statistical Learning &amp; AI</h4>
+            <p class="text-sm mt-2" style="color:var(--text-muted);">Interpretability, uncertainty and appropriate model use.</p>
+          </a>
+        </div>
+        <div class="research-map-node-wrap">
+          <a class="research-map-node" href="#research-q4" aria-label="Explore responsible population data research question">
+            <span class="node-number">04</span><h4 class="font-semibold text-base">Responsible Population Data</h4>
+            <p class="text-sm mt-2" style="color:var(--text-muted);">Privacy, bias, data quality and protection of vulnerable groups.</p>
+          </a>
+        </div>
+      </div>
+      <p class="research-map-note text-xs mt-5" style="color:var(--text-dim);">Conceptual map of interests and possible doctoral directions — not a fixed proposal or a claim of established expertise.</p>
+    </div>
+
+    <div id="research-questions" class="research-structured mt-14">
+      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// Structured Explanation · Research Questions</p>
       <h3 class="text-2xl font-semibold mt-3 max-w-3xl">Questions I want to learn how to answer rigorously.</h3>
       <div class="grid md:grid-cols-2 gap-5 mt-7">
-        <div class="glass rounded-2xl p-6 card-hover">
+        <div id="research-q1" class="glass rounded-2xl p-6 card-hover">
           <span class="badge text-[11px] px-2 py-1 rounded-full">01 · POPULATION HEALTH</span>
           <p class="text-lg leading-relaxed mt-4">How can we make reliable public-health inferences when health data are incomplete, unevenly distributed, or collected under difficult field conditions?</p>
         </div>
-        <div class="glass rounded-2xl p-6 card-hover">
+        <div id="research-q2" class="glass rounded-2xl p-6 card-hover">
           <span class="badge text-[11px] px-2 py-1 rounded-full">02 · SPATIAL &amp; TEMPORAL DATA</span>
           <p class="text-lg leading-relaxed mt-4">How can spatial and temporal information improve our understanding of changing health and protection outcomes?</p>
         </div>
-        <div class="glass rounded-2xl p-6 card-hover">
+        <div id="research-q3" class="glass rounded-2xl p-6 card-hover">
           <span class="badge text-[11px] px-2 py-1 rounded-full">03 · STATISTICAL LEARNING</span>
           <p class="text-lg leading-relaxed mt-4">When can applied machine learning add value to biostatistical methods without sacrificing interpretability or appropriate uncertainty?</p>
         </div>
-        <div class="glass rounded-2xl p-6 card-hover">
+        <div id="research-q4" class="glass rounded-2xl p-6 card-hover">
           <span class="badge text-[11px] px-2 py-1 rounded-full">04 · SENSITIVE DATA</span>
           <p class="text-lg leading-relaxed mt-4">How can we learn from sensitive population data while reducing privacy risks and protecting vulnerable groups?</p>
         </div>
@@ -597,7 +674,7 @@
     </div>
 
     <div class="mt-16">
-      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// Potential Doctoral Directions</p>
+      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// Structured Explanation · Potential Doctoral Directions</p>
       <h3 class="text-2xl font-semibold mt-3 max-w-3xl">Areas I would like to develop through doctoral training.</h3>
       <p class="mt-4 max-w-4xl text-sm" style="color:var(--text-muted);">
         These are intentionally presented as directions rather than fixed claims of expertise. The final
@@ -636,7 +713,7 @@
       </div>
     </div>
 
-    <div class="mt-16 grid lg:grid-cols-3 gap-5">
+    <div class="research-structured mt-16 grid lg:grid-cols-3 gap-5">
       <div class="glass rounded-2xl p-7">
         <p class="eyebrow text-xs uppercase" style="color:var(--teal);">Current foundation</p>
         <h3 class="font-semibold mt-3">What I already bring</h3>
@@ -655,7 +732,7 @@
     </div>
 
     <div class="mt-16">
-      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// Research Environment</p>
+      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// Structured Explanation · Research Environment</p>
       <h3 class="text-2xl font-semibold mt-3 max-w-3xl">Open to interdisciplinary doctoral supervision.</h3>
       <p class="mt-4 max-w-4xl text-sm" style="color:var(--text-muted);">
         I am particularly interested in research groups spanning <span style="color:var(--text);">Biostatistics,
