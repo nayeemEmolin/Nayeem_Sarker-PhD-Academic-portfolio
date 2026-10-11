@@ -149,6 +149,32 @@
   /* Left-align paragraph text only inside the five pipeline cards in Section 3. */
   #pipeline .pipe-node p{ text-align:left; text-justify:auto; }
 
+
+  /* Section 5: curved, responsive mini-mind maps for each advanced research question */
+  #research .rq-mindmaps { display:grid; grid-template-columns:1fr; gap:1.35rem; }
+  #research .rq-map-card { position:relative; overflow:hidden; }
+  #research .rq-map-heading { position:relative; z-index:2; max-width:900px; }
+  #research .rq-branch-diagram { position:relative; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:.8rem; margin-top:1.8rem; padding-top:1.8rem; }
+  #research .rq-curves { position:absolute; left:0; right:0; top:0; width:100%; height:1.8rem; overflow:visible; pointer-events:none; }
+  #research .rq-curves path { fill:none; stroke:var(--royal); stroke-width:2.5; vector-effect:non-scaling-stroke; opacity:.78; }
+  #research .rq-branch-node { position:relative; z-index:1; min-width:0; border:1px solid var(--border-strong); border-radius:.85rem; padding:1rem; background:var(--surface-solid); }
+  #research .rq-branch-kicker { display:block; font:500 .64rem 'Fira Code',monospace; letter-spacing:.04em; color:var(--teal); margin-bottom:.55rem; }
+  #research .rq-branch-node p { font-size:.86rem; line-height:1.55; color:var(--text-muted); text-align:left; text-justify:auto; }
+  #research .rq-method-row { display:flex; flex-wrap:wrap; align-items:center; gap:.5rem; margin-top:1.2rem; }
+  #research .rq-method-row strong { font-size:.78rem; color:var(--text); margin-right:.25rem; }
+  #research .rq-method-row span { font:400 .68rem 'Fira Code',monospace; color:var(--text-muted); border:1px solid var(--border); border-radius:999px; padding:.35rem .6rem; }
+  #research .rq-insight { display:flex; align-items:flex-start; gap:.65rem; margin-top:1.2rem; padding-top:1rem; border-top:1px solid var(--border); color:var(--text-muted); font-size:.84rem; line-height:1.6; text-align:left; text-justify:auto; }
+  #research .rq-insight i { color:var(--teal); margin-top:.25rem; }
+  #research .rq-unifying { border-color:rgba(52,87,201,.45); background:linear-gradient(135deg,rgba(52,87,201,.12),var(--surface-solid) 75%); }
+  @media (max-width:700px) {
+    #research .rq-branch-diagram { grid-template-columns:1fr; gap:.7rem; padding-top:0; padding-left:1.25rem; margin-top:1.2rem; }
+    #research .rq-curves { display:none; }
+    #research .rq-branch-diagram::before { content:""; position:absolute; left:.35rem; top:.6rem; bottom:.6rem; width:2px; background:linear-gradient(var(--royal),var(--teal)); opacity:.8; }
+    #research .rq-branch-node { padding:.85rem .95rem; }
+    #research .rq-branch-node::before { content:""; position:absolute; left:-.9rem; top:1.15rem; width:.75rem; height:.75rem; border-left:2px solid var(--royal); border-bottom:2px solid var(--royal); border-bottom-left-radius:.65rem; transform:translateY(-50%); }
+    #research .rq-method-row strong { width:100%; }
+  }
+
   /* Section 5: accessible research mind map */
   #research .research-map { position:relative; }
   #research .research-map-core {
@@ -650,28 +676,89 @@
       <p class="research-map-note text-xs mt-5" style="color:var(--text-dim);">Conceptual map of interests and possible doctoral directions — not a fixed proposal or a claim of established expertise.</p>
     </div>
 
+
     <div id="research-questions" class="research-structured mt-14">
-      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// Structured Explanation · Research Questions</p>
-      <h3 class="text-2xl font-semibold mt-3 max-w-3xl">Questions I want to learn how to answer rigorously.</h3>
-      <div class="grid md:grid-cols-2 gap-5 mt-7">
-        <div id="research-q1" class="glass rounded-2xl p-6 card-hover">
-          <span class="badge text-[11px] px-2 py-1 rounded-full">01 · POPULATION HEALTH</span>
-          <p class="text-lg leading-relaxed mt-4">How can we make reliable public-health inferences when health data are incomplete, unevenly distributed, or collected under difficult field conditions?</p>
-        </div>
-        <div id="research-q2" class="glass rounded-2xl p-6 card-hover">
-          <span class="badge text-[11px] px-2 py-1 rounded-full">02 · SPATIAL &amp; TEMPORAL DATA</span>
-          <p class="text-lg leading-relaxed mt-4">How can spatial and temporal information improve our understanding of changing health and protection outcomes?</p>
-        </div>
-        <div id="research-q3" class="glass rounded-2xl p-6 card-hover">
-          <span class="badge text-[11px] px-2 py-1 rounded-full">03 · STATISTICAL LEARNING</span>
-          <p class="text-lg leading-relaxed mt-4">When can applied machine learning add value to biostatistical methods without sacrificing interpretability or appropriate uncertainty?</p>
-        </div>
-        <div id="research-q4" class="glass rounded-2xl p-6 card-hover">
-          <span class="badge text-[11px] px-2 py-1 rounded-full">04 · SENSITIVE DATA</span>
-          <p class="text-lg leading-relaxed mt-4">How can we learn from sensitive population data while reducing privacy risks and protecting vulnerable groups?</p>
-        </div>
+      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// Structured Explanation · Advanced Research Questions</p>
+      <h3 class="text-2xl font-semibold mt-3 max-w-3xl">Four connected questions. Deeper methodological challenges.</h3>
+      <p class="mt-4 max-w-4xl text-sm" style="color:var(--text-muted);">
+        Each question is presented as a small mind map: a central scientific problem branching into deeper questions
+        and possible methods. The curved connectors show how the ideas relate; they do not imply that a method or
+        finding has already been established.
+      </p>
+
+      <div class="rq-mindmaps mt-8">
+        <article id="research-q1" class="rq-map-card glass rounded-2xl p-5 md:p-7">
+          <div class="rq-map-heading">
+            <span class="badge text-[11px] px-2 py-1 rounded-full">01 · BIOSTATISTICS &amp; POPULATION HEALTH</span>
+            <h4 class="text-xl font-semibold mt-3">Statistical inference under imperfect data</h4>
+            <p class="text-sm mt-3" style="color:var(--text-muted);">How can we obtain reliable estimates of population-health outcomes when data are incomplete, systematically mismeasured, selectively observed, or collected through non-random processes?</p>
+          </div>
+          <div class="rq-branch-diagram" aria-label="Deeper questions connected to statistical inference under imperfect data">
+            <svg class="rq-curves" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 C500 42 165 36 165 120"/><path d="M500 0 C500 44 500 44 500 120"/><path d="M500 0 C500 42 835 36 835 120"/></svg>
+            <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION A</span><p>When can missingness create bias that conventional imputation cannot adequately correct?</p></div>
+            <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION B</span><p>How sensitive are estimates to assumptions about missing data and measurement error?</p></div>
+            <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION C</span><p>Can uncertainty intervals remain well-calibrated when the data-generating process is only partly known?</p></div>
+          </div>
+          <div class="rq-method-row"><strong>Potential methods</strong><span>Missing-data theory</span><span>Multiple imputation</span><span>Bayesian hierarchical models</span><span>Sensitivity analysis</span><span>Robust estimation</span></div>
+          <p class="rq-insight"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span><strong>Intellectual challenge:</strong> distinguish uncertainty that can be quantified from bias that depends on unverifiable assumptions.</span></p>
+        </article>
+
+        <article id="research-q2" class="rq-map-card glass rounded-2xl p-5 md:p-7">
+          <div class="rq-map-heading">
+            <span class="badge text-[11px] px-2 py-1 rounded-full">02 · SPATIAL &amp; TEMPORAL MODELING</span>
+            <h4 class="text-xl font-semibold mt-3">Spatial-temporal inference and changing populations</h4>
+            <p class="text-sm mt-3" style="color:var(--text-muted);">How can we distinguish genuine changes in population outcomes from changes caused by population movement, reporting coverage, spatial aggregation, or data-collection practices?</p>
+          </div>
+          <div class="rq-branch-diagram" aria-label="Deeper questions connected to spatial-temporal inference">
+            <svg class="rq-curves" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 C500 42 165 36 165 120"/><path d="M500 0 C500 44 500 44 500 120"/><path d="M500 0 C500 42 835 36 835 120"/></svg>
+            <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION A</span><p>How do conclusions change when the same population is analyzed at different geographic scales?</p></div>
+            <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION B</span><p>Can models separate spatial dependence from temporal change and population composition?</p></div>
+            <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION C</span><p>How can emerging patterns be detected without mistaking reporting changes or noise for real trends?</p></div>
+          </div>
+          <div class="rq-method-row"><strong>Potential methods</strong><span>Spatiotemporal hierarchical models</span><span>Small-area estimation</span><span>Change-point detection</span><span>Spatial cross-validation</span><span>Sensitivity analysis</span></div>
+          <p class="rq-insight"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span><strong>Intellectual challenge:</strong> separate changes in the underlying phenomenon from changes in how that phenomenon is observed.</span></p>
+        </article>
+
+        <article id="research-q3" class="rq-map-card glass rounded-2xl p-5 md:p-7">
+          <div class="rq-map-heading">
+            <span class="badge text-[11px] px-2 py-1 rounded-full">03 · STATISTICAL LEARNING &amp; AI</span>
+            <h4 class="text-xl font-semibold mt-3">Generalization, interpretability and uncertainty in AI</h4>
+            <p class="text-sm mt-3" style="color:var(--text-muted);">Under what conditions can statistical learning models produce reliable predictions for populations, locations, or time periods that differ from the data used to train them?</p>
+          </div>
+          <div class="rq-branch-diagram" aria-label="Deeper questions connected to reliable statistical learning">
+            <svg class="rq-curves" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 C500 42 165 36 165 120"/><path d="M500 0 C500 44 500 44 500 120"/><path d="M500 0 C500 42 835 36 835 120"/></svg>
+            <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION A</span><p>How should models be evaluated when deployment populations differ from training data?</p></div>
+            <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION B</span><p>When can greater predictive accuracy come at the cost of poorly understood uncertainty or failure modes?</p></div>
+            <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION C</span><p>Do model explanations reveal stable relationships or correlations specific to the training data?</p></div>
+          </div>
+          <div class="rq-method-row"><strong>Potential methods</strong><span>Distribution-shift analysis</span><span>External validation</span><span>Interpretable ML</span><span>Calibration</span><span>Conformal prediction</span><span>Robustness testing</span></div>
+          <p class="rq-insight"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span><strong>Intellectual challenge:</strong> determine not only whether a model works, but why, where, and under what conditions its predictions can be trusted.</span></p>
+        </article>
+
+        <article id="research-q4" class="rq-map-card glass rounded-2xl p-5 md:p-7">
+          <div class="rq-map-heading">
+            <span class="badge text-[11px] px-2 py-1 rounded-full">04 · RESPONSIBLE POPULATION DATA</span>
+            <h4 class="text-xl font-semibold mt-3">Bias, privacy and responsible population inference</h4>
+            <p class="text-sm mt-3" style="color:var(--text-muted);">How can population-level evidence remain useful and equitable when data are unequally represented, sensitive, and generated within systems that may systematically exclude certain groups?</p>
+          </div>
+          <div class="rq-branch-diagram" aria-label="Deeper questions connected to responsible population inference">
+            <svg class="rq-curves" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 C500 42 165 36 165 120"/><path d="M500 0 C500 44 500 44 500 120"/><path d="M500 0 C500 42 835 36 835 120"/></svg>
+            <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION A</span><p>How do selection bias and underrepresentation affect comparisons between groups?</p></div>
+            <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION B</span><p>How much analytical utility is lost when privacy-preserving techniques are applied?</p></div>
+            <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION C</span><p>How can genuine group differences be separated from differences in measurement, access, or reporting?</p></div>
+          </div>
+          <div class="rq-method-row"><strong>Potential methods</strong><span>Selection-bias analysis</span><span>Subgroup validation</span><span>Privacy-preserving statistics</span><span>Fairness evaluation</span><span>Data provenance</span><span>Sensitivity analysis</span></div>
+          <p class="rq-insight"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span><strong>Intellectual challenge:</strong> examine who is represented, whose uncertainty is hidden, and who may be harmed when statistical results guide decisions.</span></p>
+        </article>
+      </div>
+
+      <div class="rq-unifying glass-strong rounded-2xl p-6 md:p-8 mt-6">
+        <p class="eyebrow text-xs uppercase" style="color:var(--teal);">THE UNIFYING DOCTORAL QUESTION</p>
+        <h4 class="text-xl md:text-2xl font-semibold mt-3">How can statistical learning frameworks remain reliable under incomplete data, population heterogeneity, spatial-temporal change, and uncertainty—while preserving interpretability and protecting vulnerable populations?</h4>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">These are candidate research directions, not a finalized proposal. A feasible dissertation would narrow the scope around a specific scientific gap, study design, data source and supervisory expertise.</p>
       </div>
     </div>
+
 
     <div class="mt-16">
       <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// Structured Explanation · Potential Doctoral Directions</p>
