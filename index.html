@@ -236,6 +236,13 @@
     #projects .project-progression-connector svg { width:46px; height:20px; transform:rotate(90deg); }
   }
 
+
+  /* Section 8: readable, research-focused publication card */
+  #publication .publication-summary { border-top:1px solid var(--border); padding-top:1.15rem; }
+  #publication .publication-summary p { max-width:62rem; text-align:left; text-justify:auto; line-height:1.75; }
+  #publication .publication-summary h4 { color:var(--text); }
+  @media(max-width:767px) { #publication .glass-strong { padding:1.35rem; } }
+
 </style>
 </head>
 <body class="antialiased" style="background-color:var(--bg); color:var(--text);">
@@ -1180,19 +1187,29 @@
 <section id="publication" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
     <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 06 — Peer-Reviewed Publication</p>
-    <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-2xl">Published research: statistical and data-driven analysis.</h2>
+    <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-2xl">Published research in statistical analysis and forecasting.</h2>
+    <p class="mt-4 max-w-3xl text-sm md:text-base" style="color:var(--text-muted);">My peer-reviewed publication examines patterns in internet use in Bangladesh and reflects my early research training in quantitative analysis, growth measurement and time-series forecasting.</p>
 
-    <div class="glass-strong rounded-2xl p-8 mt-10 flex flex-col md:flex-row md:items-center gap-6 card-hover">
+    <div class="glass-strong rounded-2xl p-8 mt-10 flex flex-col md:flex-row md:items-start gap-6 card-hover">
       <div class="w-14 h-14 rounded-xl grid place-items-center shrink-0" style="background:rgba(20,184,166,.12); color:var(--teal);">
         <i class="fa-solid fa-book-open text-xl"></i>
       </div>
       <div class="flex-1">
-        <h3 class="font-semibold text-lg">Forecast, Trend, Growth, and Instability of Internet Users in Bangladesh</h3>
-        <p class="text-sm mt-2" style="color:var(--text-muted);">Sarker, N., Sorkar, M. N. U., Sorkar, M. R. U., &amp; Uddin, M. T. (2022). <em>Computer Engineering and Intelligent Systems</em>, 13(4).</p>
+        <span class="badge text-[11px] px-2 py-1 rounded-full">PEER-REVIEWED JOURNAL ARTICLE · 2022</span>
+        <h3 class="font-semibold text-lg mt-3">Forecast, Trend, Growth, and Instability of Internet Users in Bangladesh</h3>
+        <p class="text-sm mt-3" style="color:var(--text-muted);">Sorkar, M. N. U., Sorkar, M. R. U., Uddin, M. T., &amp; Sarker, N. (2022). <em>Computer Engineering and Intelligent Systems</em>, 13(4).</p>
         <p class="font-mono text-xs mt-2" style="color:var(--text-dim);">DOI: 10.7176/CEIS/13-4-01</p>
+        <div class="publication-summary mt-6">
+          <h4 class="text-sm font-semibold">Research focus</h4>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">The study examines internet-user trends, growth and instability in Bangladesh and uses time-series forecasting to explore the trajectory of internet use.</p>
+          <h4 class="text-sm font-semibold mt-5">Analytical approach</h4>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">The paper combines quantitative trend and growth analysis with ARIMA-based forecasting. These methods provide a foundation for thinking critically about temporal patterns, model assumptions and uncertainty in forecasts.</p>
+          <h4 class="text-sm font-semibold mt-5">Connection to my doctoral interests</h4>
+          <p class="text-sm mt-2" style="color:var(--text-muted);">This work helped shape my interest in statistical modeling and evidence from real-world data. My proposed doctoral direction builds on that foundation by asking how inference and prediction can remain reliable when data are incomplete, populations change, or model assumptions are uncertain.</p>
+        </div>
       </div>
-      <a href="https://iiste.org/Journals/index.php/CEIS/article/view/59330/61255" target="_blank" rel="noopener" class="btn-ghost px-5 py-2.5 rounded-full text-sm inline-flex items-center gap-2 whitespace-nowrap" style="color:var(--text);">
-        View DOI <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+      <a href="https://doi.org/10.7176/CEIS/13-4-01" target="_blank" rel="noopener noreferrer" class="btn-ghost px-5 py-2.5 rounded-full text-sm inline-flex items-center gap-2 whitespace-nowrap" style="color:var(--text);">
+        Read publication <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
       </a>
     </div>
   </div>
