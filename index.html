@@ -368,7 +368,7 @@
   #home .hero-inline-portrait {
     float: right; display: block; width: clamp(125px, 15vw, 190px);
     aspect-ratio: 4 / 5; height: auto; object-fit: cover;
-    margin: .15rem 0 .8rem 1.35rem; border-radius: 1.15rem;
+    margin: -0.45rem 0 .8rem 1.35rem; border-radius: 1.15rem;
     padding: 3px;
     background: linear-gradient(145deg, #60a5fa 0%, #14b8a6 48%, #6366f1 100%);
     box-shadow: 0 10px 28px rgba(37,99,235,.2), 0 3px 10px rgba(0,0,0,.12);
@@ -404,6 +404,20 @@
   #home .hero-intro { margin-bottom: 0 !important; }
   #home .hero-intro + div { margin-top: 1rem !important; }
   #home .hero-intro + div + div { margin-top: 1.5rem !important; }
+
+
+  #home .hero-portrait-link {
+    float: right; display: block; width: fit-content; line-height: 0;
+    margin: 0; text-decoration: none; border-radius: 1.15rem;
+    cursor: pointer;
+  }
+  #home .hero-portrait-link:focus-visible {
+    outline: 3px solid #60a5fa; outline-offset: 6px; border-radius: 1.2rem;
+  }
+  #home .hero-portrait-link .hero-inline-portrait { float: none; }
+  @media (max-width: 640px) {
+    #home .hero-portrait-link { float: right; }
+  }
 
 </style>
 </head>
@@ -449,7 +463,7 @@
       <span class="grad-text">Statistical learning for population health and humanitarian data.</span>
     </h1>
     <p class="hero-intro mt-2 w-full text-sm md:text-base leading-relaxed" style="color:var(--text-muted);">
-      <img src="./image.png" alt="Professional portrait of Nayeem Sarker" width="565" height="565" loading="eager" decoding="async" class="hero-inline-portrait" style="object-position:center;" />
+      <a href="https://www.linkedin.com/in/nayeem-sarker-44a31439a/" target="_blank" rel="noopener noreferrer" aria-label="Visit Nayeem Sarker on LinkedIn" class="hero-portrait-link"><img src="./image.png" alt="Professional portrait of Nayeem Sarker" width="565" height="565" loading="eager" decoding="async" class="hero-inline-portrait" style="object-position:center;" /></a>
       I am Nayeem Sarker, a statistics-trained researcher from Bangladesh with a completed M.Sc. in
       <span style="color:var(--text);">Statistics</span> from Shahjalal University of Science and Technology (SUST), and additional graduate coursework in
       <span style="color:var(--text);">Computer Science &amp; Engineering</span>.
