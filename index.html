@@ -274,8 +274,21 @@
 }
 
 
-  /* Professional photo gallery */
-  #photos .photo-gallery { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.25rem; }
+  /* Continuous horizontal carousel moving from left to right */
+  #photos .photo-gallery-wrap { overflow:hidden; width:100%; position:relative; padding:.25rem 0 1rem; }
+  #photos .photo-gallery { display:flex; flex-wrap:nowrap; gap:1.25rem; width:max-content; animation:photo-marquee-ltr 58s linear infinite; will-change:transform; }
+  #photos .photo-card { flex:0 0 clamp(270px,34vw,390px); min-width:0; display:flex; flex-direction:column; transition:border-color .25s ease; }
+  #photos .photo-card:hover { border-color:var(--teal); }
+  #photos .photo-gallery-wrap:hover .photo-gallery, #photos .photo-gallery-wrap:focus-within .photo-gallery { animation-play-state:paused; }
+  #photos .photo-card img { display:block; width:100%; aspect-ratio:16/10; object-fit:cover; background:var(--surface-solid); }
+  #photos .photo-card figcaption { padding:1.15rem 1.2rem 1.3rem; }
+  #photos .photo-category { display:inline-block; color:var(--teal); font:500 .65rem 'Fira Code',monospace; letter-spacing:.06em; text-transform:uppercase; margin-bottom:.55rem; }
+  #photos .photo-card h3 { font-weight:600; font-size:1rem; line-height:1.45; color:var(--text); }
+  #photos .photo-card p { color:var(--text-muted); font-size:.83rem; line-height:1.7; margin-top:.55rem; text-align:left; text-justify:auto; }
+  #photos .photo-note { color:var(--text-dim); font-size:.75rem; line-height:1.6; margin-top:1.25rem; text-align:left; text-justify:auto; }
+  @keyframes photo-marquee-ltr { from { transform:translateX(-50%); } to { transform:translateX(0); } }
+  @media (prefers-reduced-motion: reduce) { #photos .photo-gallery { animation:none; } }
+  @media(max-width:640px) { #photos .photo-gallery { gap:1rem; } #photos .photo-card { flex-basis:82vw; } #photos .photo-card figcaption { padding:1rem; } }
   #photos .photo-card { min-width:0; display:flex; flex-direction:column; transition:transform .25s ease,border-color .25s ease; }
   #photos .photo-card:hover { transform:translateY(-3px); border-color:var(--teal); }
   #photos .photo-card img { display:block; width:100%; aspect-ratio:16/10; object-fit:cover; background:var(--surface-solid); }
@@ -1345,7 +1358,7 @@
       <h2 class="text-2xl md:text-3xl font-bold mt-3">Learning, collaboration and applied research.</h2>
       <p class="mt-4 text-sm md:text-base" style="color:var(--text-muted);">Selected moments from programme learning, information-management training, research communication and collaborative activities.</p>
     </div>
-    <div class="photo-gallery">
+    <div class="photo-gallery-wrap" aria-label="Moving photo gallery. Hover or focus to pause."><div class="photo-gallery" id="photoGallery">
       <figure class="photo-card glass rounded-2xl overflow-hidden"><img src="photos/image-001.jpeg" alt="Nayeem Sarker speaking at a podium during the UNHCR–CODEC Programme Review, Learning and Sharing Workshop 2025." loading="lazy"><figcaption><span class="photo-category">Presentation</span><h3>Programme review and learning</h3><p>Presenting at the UNHCR–CODEC Programme Review, Learning and Sharing Workshop 2025, contributing to discussions on programme learning and performance.</p></figcaption></figure>
       <figure class="photo-card glass rounded-2xl overflow-hidden"><img src="photos/image-002.jpeg" alt="Participants working with laptops during a collaborative information-management session." loading="lazy"><figcaption><span class="photo-category">Information management</span><h3>Digital tools and teamwork</h3><p>Collaborating in an information-management session, using digital tools to support team discussion and data-informed programme work.</p></figcaption></figure>
       <figure class="photo-card glass rounded-2xl overflow-hidden"><img src="photos/image-003.jpeg" alt="Participants attending a UNHCR–CODEC EPRC training session on CPIMS+ and DPISP." loading="lazy"><figcaption><span class="photo-category">Technical training</span><h3>CPIMS+ and DPISP learning</h3><p>Participating in a UNHCR–CODEC EPRC training session on CPIMS+ and DPISP, supporting knowledge-sharing on digital protection information systems.</p></figcaption></figure>
@@ -1355,7 +1368,8 @@
       <figure class="photo-card glass rounded-2xl overflow-hidden"><img src="photos/image-007.jpeg" alt="A group of participants presenting together at the front of a conference room." loading="lazy"><figcaption><span class="photo-category">Peer learning</span><h3>Workshop presentation</h3><p>Taking part in a workshop presentation and peer-learning session, contributing to teamwork, communication and shared reflection.</p></figcaption></figure>
       <figure class="photo-card glass rounded-2xl overflow-hidden"><img src="photos/image-008.jpeg" alt="A four-person team presenting a project with a pie chart displayed on a screen." loading="lazy"><figcaption><span class="photo-category">Data communication</span><h3>Presenting a data-supported project</h3><p>Presenting a team project supported by visual data analysis, demonstrating collaboration and the use of charts to communicate information.</p></figcaption></figure>
     </div>
-    <p class="photo-note">Captions describe the visible activity and professional context. Sensitive personal or protection-case information is not displayed.</p>
+    </div>
+    <p class="photo-note">Captions describe the visible activity and professional context. Hover over the gallery to pause the movement. Sensitive personal or protection-case information is not displayed.</p>
   </div>
 </section>
 
@@ -1506,6 +1520,18 @@
     root.setAttribute('data-theme', isLight ? 'dark' : 'light');
     themeIcon.className = isLight ? 'fa-solid fa-moon text-sm' : 'fa-solid fa-sun text-sm';
   });
+
+  // Duplicate cards to make the left-to-right horizontal loop seamless.
+  const photoGallery = document.getElementById('photoGallery');
+  if (photoGallery && !photoGallery.dataset.loopReady) {
+    Array.from(photoGallery.children).forEach((card) => {
+      const clone = card.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      clone.querySelectorAll('img').forEach((img) => img.setAttribute('alt', ''));
+      photoGallery.appendChild(clone);
+    });
+    photoGallery.dataset.loopReady = 'true';
+  }
 
   // Project filtering
   const filterBar = document.getElementById('filterBar');
