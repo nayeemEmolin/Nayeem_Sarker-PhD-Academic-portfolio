@@ -299,6 +299,74 @@
   #photos .photo-note { color:var(--text-dim); font-size:.75rem; line-height:1.6; margin-top:1.25rem; text-align:left; text-justify:auto; }
   @media(max-width:640px) { #photos .photo-gallery { grid-template-columns:1fr; gap:1rem; } #photos .photo-card figcaption { padding:1rem; } }
 
+
+  
+  /* COMPACT ACADEMIC PORTFOLIO — preserve all original content, links and sections */
+  :root { scroll-padding-top: 5.5rem; }
+  section[id] {
+    padding-top: clamp(2.25rem, 4vw, 3.5rem) !important;
+    padding-bottom: clamp(2.25rem, 4vw, 3.5rem) !important;
+    scroll-margin-top: 5.5rem;
+  }
+  #home {
+    padding-top: clamp(7.5rem, 10vw, 9rem) !important;
+    padding-bottom: clamp(2.5rem, 4vw, 3.5rem) !important;
+  }
+  section[id] .max-w-6xl > .max-w-3xl,
+  section[id] .max-w-6xl > .max-w-4xl,
+  section[id] .max-w-6xl > .max-w-5xl {
+    margin-bottom: 1.25rem !important;
+  }
+  section[id] .mb-10 { margin-bottom: 1.25rem !important; }
+  section[id] .mb-8 { margin-bottom: 1rem !important; }
+  section[id] .mt-10 { margin-top: 1.5rem !important; }
+  section[id] .mt-12,
+  section[id] .mt-14,
+  section[id] .mt-16 { margin-top: 1.75rem !important; }
+  section[id] .grid { gap: clamp(.7rem, 1.4vw, 1.15rem) !important; }
+  section[id] article.glass,
+  section[id] article.glass-strong {
+    padding: clamp(.9rem, 1.5vw, 1.25rem) !important;
+  }
+  section[id] .glass.rounded-xl,
+  section[id] .glass-strong.rounded-xl {
+    padding: clamp(.9rem, 1.5vw, 1.25rem);
+  }
+  section[id] h2 { line-height: 1.2; }
+  section[id] h3 { line-height: 1.35; }
+  #about .glass, #overview .glass, #dashboards .glass,
+  #projects .glass, #education .glass, #training .glass {
+    min-width: 0;
+  }
+  #pipeline .pipe-node { padding: .9rem !important; }
+  #research .research-map-core { padding: 1rem 1.15rem; }
+  #research .research-map-node { padding: .85rem; min-height: 125px; }
+  #research .rq-branch-node { padding: .8rem; }
+  #projects .project-progression { gap: .35rem; }
+  #publication .publication-summary { padding-top: .8rem; }
+  #photos .photo-card figcaption { padding: .9rem 1rem 1rem; }
+  #photos .photo-note { margin-top: .75rem; }
+  #training .grid { align-items: stretch; }
+  #contact .flex.flex-wrap.justify-center.gap-6 { margin-top: 1.5rem !important; }
+  @media (min-width: 1024px) {
+    #research .rq-mindmaps { gap: .9rem; }
+    #research .research-map-branches { gap: .7rem; }
+  }
+  @media (max-width: 767px) {
+    section[id] { padding-top: 2rem !important; padding-bottom: 2rem !important; }
+    #home { padding-top: 7rem !important; padding-bottom: 2rem !important; }
+    section[id] article.glass,
+    section[id] article.glass-strong,
+    section[id] .glass.rounded-xl,
+    section[id] .glass-strong.rounded-xl { padding: .9rem !important; }
+    #research .research-map-node { min-height: 0; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    #photos .photo-gallery { animation-duration: 120s !important; }
+    .grad-text, .pipe-packet { animation: none !important; }
+    *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+  }
+
 </style>
 </head>
 <body class="antialiased" style="background-color:var(--bg); color:var(--text);">
