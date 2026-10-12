@@ -326,11 +326,24 @@
   #photos .photo-card p { margin-top: .35rem; line-height: 1.5; }
   #photos .photo-note { margin-top: .65rem; }
   #contact .flex.flex-wrap.justify-center.gap-6 { margin-top: 1.25rem !important; }
-  .compact-disclosure { margin-top: .7rem; border-top: 1px solid var(--border); padding-top: .65rem; }
-  .compact-disclosure > summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: .75rem; color: var(--teal); font-size: .78rem; font-weight: 600; }
+  .compact-disclosure { margin-top: .8rem; border-top: 1px solid var(--border); padding-top: .7rem; }
+  .compact-disclosure > summary {
+    cursor: pointer; list-style: none; display: inline-flex; align-items: center;
+    justify-content: center; gap: .6rem; color: #fff;
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    border: 1px solid rgba(96,165,250,.8); border-radius: 999px;
+    padding: .62rem 1rem; min-height: 40px; font-size: .78rem;
+    font-weight: 700; letter-spacing: .01em; line-height: 1.2;
+    box-shadow: 0 4px 14px rgba(37,99,235,.22);
+    transition: background .18s ease, box-shadow .18s ease, transform .18s ease;
+  }
   .compact-disclosure > summary::-webkit-details-marker { display: none; }
-  .compact-disclosure > summary:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; border-radius: .2rem; }
-  .compact-disclosure[open] > summary span { transform: rotate(45deg); }
+  .compact-disclosure > summary::after { content: "＋"; font-size: 1rem; line-height: 1; }
+  .compact-disclosure > summary span { display: none; }
+  .compact-disclosure > summary:hover { background: linear-gradient(135deg, #3b82f6, #2563eb); box-shadow: 0 6px 18px rgba(37,99,235,.32); transform: translateY(-1px); }
+  .compact-disclosure > summary:focus-visible { outline: 3px solid #93c5fd; outline-offset: 3px; }
+  .compact-disclosure[open] > summary::after { content: "−"; }
+  .compact-disclosure[open] > summary { background: linear-gradient(135deg, #1d4ed8, #1e40af); }
   .compact-disclosure-body { padding-top: .75rem; }
   .compact-disclosure-body > * + * { margin-top: .75rem; }
   @media (min-width: 1024px) {
