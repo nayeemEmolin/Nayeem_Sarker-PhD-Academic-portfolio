@@ -320,8 +320,8 @@
   #research .research-map-node { padding: .7rem; min-height: 105px; }
   #research .research-map-branches { gap: .65rem; }
   #projects .project-progression { gap: .35rem; }
-  #photos .photo-gallery-wrap { max-height: 23rem; overflow: hidden; }
-  #photos .photo-card { width: min(20rem, 78vw); }
+  #photos .photo-gallery-wrap { overflow: hidden; }
+  #photos .photo-card { flex: 0 0 min(19rem, 78vw); width: min(19rem, 78vw); }
   #photos .photo-card figcaption { padding: .8rem .9rem .9rem; }
   #photos .photo-card p { margin-top: .35rem; line-height: 1.5; }
   #photos .photo-note { margin-top: .65rem; }
@@ -342,7 +342,6 @@
     section[id] article.glass, section[id] article.glass-strong,
     section[id] .glass.rounded-xl, section[id] .glass-strong.rounded-xl { padding: .85rem !important; }
     #research .research-map-node { min-height: 0; }
-    #photos .photo-gallery-wrap { max-height: 19rem; }
   }
   @media (prefers-reduced-motion: reduce) {
     #photos .photo-gallery { animation-duration: 120s !important; }
