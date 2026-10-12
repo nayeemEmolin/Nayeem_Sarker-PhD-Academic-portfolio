@@ -301,65 +301,48 @@
 
 
   
-  /* COMPACT ACADEMIC PORTFOLIO — preserve all original content, links and sections */
-  :root { scroll-padding-top: 5.5rem; }
-  section[id] {
-    padding-top: clamp(2.25rem, 4vw, 3.5rem) !important;
-    padding-bottom: clamp(2.25rem, 4vw, 3.5rem) !important;
-    scroll-margin-top: 5.5rem;
-  }
-  #home {
-    padding-top: clamp(7.5rem, 10vw, 9rem) !important;
-    padding-bottom: clamp(2.5rem, 4vw, 3.5rem) !important;
-  }
-  section[id] .max-w-6xl > .max-w-3xl,
-  section[id] .max-w-6xl > .max-w-4xl,
-  section[id] .max-w-6xl > .max-w-5xl {
-    margin-bottom: 1.25rem !important;
-  }
+  /* COMPACT ACADEMIC PORTFOLIO — all original copy and sections retained */
+  :root { scroll-padding-top: 5rem; }
+  section[id] { scroll-margin-top: 5rem; }
+  #home { padding-top: clamp(7rem, 10vw, 8.5rem) !important; padding-bottom: 2.5rem !important; }
   section[id] .mb-10 { margin-bottom: 1.25rem !important; }
-  section[id] .mb-8 { margin-bottom: 1rem !important; }
-  section[id] .mt-10 { margin-top: 1.5rem !important; }
-  section[id] .mt-12,
-  section[id] .mt-14,
-  section[id] .mt-16 { margin-top: 1.75rem !important; }
-  section[id] .grid { gap: clamp(.7rem, 1.4vw, 1.15rem) !important; }
-  section[id] article.glass,
-  section[id] article.glass-strong {
-    padding: clamp(.9rem, 1.5vw, 1.25rem) !important;
-  }
-  section[id] .glass.rounded-xl,
-  section[id] .glass-strong.rounded-xl {
-    padding: clamp(.9rem, 1.5vw, 1.25rem);
-  }
+  section[id] .mb-8 { margin-bottom: .9rem !important; }
+  section[id] .mt-10, section[id] .mt-12, section[id] .mt-14, section[id] .mt-16 { margin-top: 1.5rem !important; }
+  section[id] .grid { gap: clamp(.7rem, 1.25vw, 1rem) !important; }
+  section[id] article.glass, section[id] article.glass-strong { padding: clamp(.85rem, 1.4vw, 1.15rem) !important; }
+  section[id] .glass.rounded-xl, section[id] .glass-strong.rounded-xl { padding: clamp(.85rem, 1.4vw, 1.15rem); }
   section[id] h2 { line-height: 1.2; }
-  section[id] h3 { line-height: 1.35; }
-  #about .glass, #overview .glass, #dashboards .glass,
-  #projects .glass, #education .glass, #training .glass {
-    min-width: 0;
-  }
-  #pipeline .pipe-node { padding: .9rem !important; }
-  #research .research-map-core { padding: 1rem 1.15rem; }
-  #research .research-map-node { padding: .85rem; min-height: 125px; }
-  #research .rq-branch-node { padding: .8rem; }
+  section[id] h3, section[id] h4 { line-height: 1.35; }
+  #pipeline .pipe-node { padding: .8rem !important; }
+  #research .rq-map-card { padding: .95rem !important; }
+  #research .rq-branch-node { padding: .65rem; }
+  #research .research-map-core { padding: .85rem 1rem; }
+  #research .research-map-node { padding: .7rem; min-height: 105px; }
+  #research .research-map-branches { gap: .65rem; }
   #projects .project-progression { gap: .35rem; }
-  #publication .publication-summary { padding-top: .8rem; }
-  #photos .photo-card figcaption { padding: .9rem 1rem 1rem; }
-  #photos .photo-note { margin-top: .75rem; }
-  #training .grid { align-items: stretch; }
-  #contact .flex.flex-wrap.justify-center.gap-6 { margin-top: 1.5rem !important; }
+  #photos .photo-gallery-wrap { max-height: 23rem; overflow: hidden; }
+  #photos .photo-card { width: min(20rem, 78vw); }
+  #photos .photo-card figcaption { padding: .8rem .9rem .9rem; }
+  #photos .photo-card p { margin-top: .35rem; line-height: 1.5; }
+  #photos .photo-note { margin-top: .65rem; }
+  #contact .flex.flex-wrap.justify-center.gap-6 { margin-top: 1.25rem !important; }
+  .compact-disclosure { margin-top: .7rem; border-top: 1px solid var(--border); padding-top: .65rem; }
+  .compact-disclosure > summary { cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: .75rem; color: var(--teal); font-size: .78rem; font-weight: 600; }
+  .compact-disclosure > summary::-webkit-details-marker { display: none; }
+  .compact-disclosure > summary:focus-visible { outline: 2px solid var(--teal); outline-offset: 4px; border-radius: .2rem; }
+  .compact-disclosure[open] > summary span { transform: rotate(45deg); }
+  .compact-disclosure-body { padding-top: .75rem; }
+  .compact-disclosure-body > * + * { margin-top: .75rem; }
   @media (min-width: 1024px) {
-    #research .rq-mindmaps { gap: .9rem; }
-    #research .research-map-branches { gap: .7rem; }
+    #research .rq-mindmaps { gap: .8rem; }
+    #research .research-map-branches { gap: .65rem; }
   }
   @media (max-width: 767px) {
-    section[id] { padding-top: 2rem !important; padding-bottom: 2rem !important; }
-    #home { padding-top: 7rem !important; padding-bottom: 2rem !important; }
-    section[id] article.glass,
-    section[id] article.glass-strong,
-    section[id] .glass.rounded-xl,
-    section[id] .glass-strong.rounded-xl { padding: .9rem !important; }
+    #home { padding-top: 6.75rem !important; padding-bottom: 2rem !important; }
+    section[id] article.glass, section[id] article.glass-strong,
+    section[id] .glass.rounded-xl, section[id] .glass-strong.rounded-xl { padding: .85rem !important; }
     #research .research-map-node { min-height: 0; }
+    #photos .photo-gallery-wrap { max-height: 19rem; }
   }
   @media (prefers-reduced-motion: reduce) {
     #photos .photo-gallery { animation-duration: 120s !important; }
@@ -378,13 +361,15 @@
       <a href="#home" class="font-mono text-sm md:text-base tracking-tight" style="color:var(--text);">
         <span style="color:var(--teal);">N.</span>Sarker <span class="hidden sm:inline text-xs" style="color:var(--text-dim);">// research.profile</span>
       </a>
-      <div class="hidden lg:flex items-center gap-7 text-sm">
+      <div class="hidden lg:flex items-center gap-5 text-sm">
         <a href="#about" class="nav-link">About</a>
+        <a href="#overview" class="nav-link">Overview</a>
         <a href="#pipeline" class="nav-link">Pipeline</a>
         <a href="#research" class="nav-link">Research</a>
         <a href="#dashboards" class="nav-link">Dashboards</a>
         <a href="#projects" class="nav-link">Projects</a>
         <a href="#publication" class="nav-link">Publication</a>
+        <a href="#education" class="nav-link">Education</a>
         <a href="#photos" class="nav-link">Photos</a>
         <a href="#training" class="nav-link">Training</a>
         <a href="#contact" class="nav-link">Contact</a>
@@ -403,7 +388,7 @@
 <section id="home" class="relative pt-40 pb-24 md:pt-48 md:pb-32 overflow-hidden">
   <div class="absolute inset-0 grid-overlay pointer-events-none"></div>
   <div class="max-w-6xl mx-auto px-6 relative">
-    <div class="grid md:grid-cols-12 gap-10 lg:gap-14 items-center">
+    <div class="grid md:grid-cols-12 gap-6 lg:gap-8 items-center">
       <div class="md:col-span-8 min-w-0">
     <p class="eyebrow text-xs uppercase mb-5" style="color:var(--teal);">// PhD RESEARCH PROFILE — STATISTICAL LEARNING · POPULATION HEALTH · HUMANITARIAN DATA</p>
     <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-[1.08] max-w-4xl">
@@ -470,7 +455,7 @@
 </section>
 
 <!-- ABOUT -->
-<section id="about" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+<section id="about" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
     <div class="grid md:grid-cols-12 gap-12">
       <div class="md:col-span-4">
@@ -544,7 +529,7 @@
 </section>
 
 <!-- DATA PIPELINE VISUALIZER -->
-<section id="pipeline" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+<section id="pipeline" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
     <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 02 — Research-to-Evidence Pipeline</p>
     <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-2xl">From statistical foundations to field evidence.</h2>
@@ -585,7 +570,7 @@
         </article>
       </div>
     </div>
-    <div class="glass rounded-2xl p-6 md:p-8 mt-10" style="border-left:3px solid var(--teal);">
+    <div class="glass rounded-2xl p-5 md:p-6 mt-10" style="border-left:3px solid var(--teal);">
       <h3 class="font-semibold text-base md:text-lg">From operational data to trustworthy statistical evidence</h3>
       <p class="text-sm mt-3 max-w-4xl" style="color:var(--text-muted);">
         My goal is to develop rigorous, reproducible and responsible analytical methods for population-health and humanitarian data,
@@ -598,7 +583,7 @@
 
 
 <!-- 60-SECOND OVERVIEW -->
-<section id="overview" class="py-16 md:py-20" style="background:linear-gradient(180deg, rgba(45,212,191,.045), transparent);">
+<section id="overview" class="py-10 md:py-12" style="background:linear-gradient(180deg, rgba(45,212,191,.045), transparent);">
   <div class="max-w-6xl mx-auto px-6">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
       <div>
@@ -614,7 +599,7 @@
       </div>
     </div>
 
-    <div class="mt-9 glass rounded-3xl p-5 md:p-7">
+    <div class="mt-9 glass rounded-3xl p-5 md:p-5">
       <div class="grid md:grid-cols-4 gap-2" role="tablist" aria-label="60-second portfolio overview">
         <button class="overview-tab active text-left rounded-2xl p-4" data-step="0" role="tab" aria-selected="true">
           <span class="text-xs uppercase tracking-wider" style="color:var(--teal);">01</span>
@@ -639,7 +624,7 @@
       </div>
 
       <div class="mt-6 grid lg:grid-cols-[1.2fr_.8fr] gap-6 items-stretch">
-        <div class="rounded-2xl p-6 md:p-8" style="background:rgba(255,255,255,.025);border:1px solid var(--border);">
+        <div class="rounded-2xl p-5 md:p-6" style="background:rgba(255,255,255,.025);border:1px solid var(--border);">
           <div id="overview-content"></div>
         </div>
 
@@ -781,7 +766,7 @@
 </script>
 
 <!-- RESEARCH FOCUS -->
-<section id="research" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+<section id="research" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
     <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 03 — PhD Research Agenda</p>
     <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-4xl">Statistical learning for population health and humanitarian data.</h2>
@@ -837,12 +822,13 @@
       </p>
 
       <div class="rq-mindmaps mt-8">
-        <article id="research-q1" class="rq-map-card glass rounded-2xl p-5 md:p-7">
+        <article id="research-q1" class="rq-map-card glass rounded-2xl p-5 md:p-5">
           <div class="rq-map-heading">
             <span class="badge text-[11px] px-2 py-1 rounded-full">01 · BIOSTATISTICS &amp; POPULATION HEALTH</span>
             <h4 class="text-xl font-semibold mt-3">Statistical inference under imperfect data</h4>
             <p class="text-sm mt-3" style="color:var(--text-muted);">How can we obtain reliable estimates of population-health outcomes when data are incomplete, systematically mismeasured, selectively observed, or collected through non-random processes?</p>
           </div>
+          <details class="compact-disclosure"><summary>View full details <span aria-hidden="true">＋</span></summary><div class="compact-disclosure-body">
           <div class="rq-branch-diagram" aria-label="Deeper questions connected to statistical inference under imperfect data">
             <svg class="rq-curves" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 C500 42 165 36 165 120"/><path d="M500 0 C500 44 500 44 500 120"/><path d="M500 0 C500 42 835 36 835 120"/></svg>
             <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION A</span><p>When can missingness create bias that conventional imputation cannot adequately correct?</p></div>
@@ -851,14 +837,17 @@
           </div>
           <div class="rq-method-row"><strong>Potential methods</strong><span>Missing-data theory</span><span>Multiple imputation</span><span>Bayesian hierarchical models</span><span>Sensitivity analysis</span><span>Robust estimation</span></div>
           <p class="rq-insight"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span><strong>Intellectual challenge:</strong> distinguish uncertainty that can be quantified from bias that depends on unverifiable assumptions.</span></p>
+        
+          </div></details>
         </article>
 
-        <article id="research-q2" class="rq-map-card glass rounded-2xl p-5 md:p-7">
+        <article id="research-q2" class="rq-map-card glass rounded-2xl p-5 md:p-5">
           <div class="rq-map-heading">
             <span class="badge text-[11px] px-2 py-1 rounded-full">02 · SPATIAL &amp; TEMPORAL MODELING</span>
             <h4 class="text-xl font-semibold mt-3">Spatial-temporal inference and changing populations</h4>
             <p class="text-sm mt-3" style="color:var(--text-muted);">How can we distinguish genuine changes in population outcomes from changes caused by population movement, reporting coverage, spatial aggregation, or data-collection practices?</p>
           </div>
+          <details class="compact-disclosure"><summary>View full details <span aria-hidden="true">＋</span></summary><div class="compact-disclosure-body">
           <div class="rq-branch-diagram" aria-label="Deeper questions connected to spatial-temporal inference">
             <svg class="rq-curves" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 C500 42 165 36 165 120"/><path d="M500 0 C500 44 500 44 500 120"/><path d="M500 0 C500 42 835 36 835 120"/></svg>
             <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION A</span><p>How do conclusions change when the same population is analyzed at different geographic scales?</p></div>
@@ -867,14 +856,17 @@
           </div>
           <div class="rq-method-row"><strong>Potential methods</strong><span>Spatiotemporal hierarchical models</span><span>Small-area estimation</span><span>Change-point detection</span><span>Spatial cross-validation</span><span>Sensitivity analysis</span></div>
           <p class="rq-insight"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span><strong>Intellectual challenge:</strong> separate changes in the underlying phenomenon from changes in how that phenomenon is observed.</span></p>
+        
+          </div></details>
         </article>
 
-        <article id="research-q3" class="rq-map-card glass rounded-2xl p-5 md:p-7">
+        <article id="research-q3" class="rq-map-card glass rounded-2xl p-5 md:p-5">
           <div class="rq-map-heading">
             <span class="badge text-[11px] px-2 py-1 rounded-full">03 · STATISTICAL LEARNING &amp; AI</span>
             <h4 class="text-xl font-semibold mt-3">Generalization, interpretability and uncertainty in AI</h4>
             <p class="text-sm mt-3" style="color:var(--text-muted);">Under what conditions can statistical learning models produce reliable predictions for populations, locations, or time periods that differ from the data used to train them?</p>
           </div>
+          <details class="compact-disclosure"><summary>View full details <span aria-hidden="true">＋</span></summary><div class="compact-disclosure-body">
           <div class="rq-branch-diagram" aria-label="Deeper questions connected to reliable statistical learning">
             <svg class="rq-curves" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 C500 42 165 36 165 120"/><path d="M500 0 C500 44 500 44 500 120"/><path d="M500 0 C500 42 835 36 835 120"/></svg>
             <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION A</span><p>How should models be evaluated when deployment populations differ from training data?</p></div>
@@ -883,14 +875,17 @@
           </div>
           <div class="rq-method-row"><strong>Potential methods</strong><span>Distribution-shift analysis</span><span>External validation</span><span>Interpretable ML</span><span>Calibration</span><span>Conformal prediction</span><span>Robustness testing</span></div>
           <p class="rq-insight"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span><strong>Intellectual challenge:</strong> determine not only whether a model works, but why, where, and under what conditions its predictions can be trusted.</span></p>
+        
+          </div></details>
         </article>
 
-        <article id="research-q4" class="rq-map-card glass rounded-2xl p-5 md:p-7">
+        <article id="research-q4" class="rq-map-card glass rounded-2xl p-5 md:p-5">
           <div class="rq-map-heading">
             <span class="badge text-[11px] px-2 py-1 rounded-full">04 · RESPONSIBLE POPULATION DATA</span>
             <h4 class="text-xl font-semibold mt-3">Bias, privacy and responsible population inference</h4>
             <p class="text-sm mt-3" style="color:var(--text-muted);">How can population-level evidence remain useful and equitable when data are unequally represented, sensitive, and generated within systems that may systematically exclude certain groups?</p>
           </div>
+          <details class="compact-disclosure"><summary>View full details <span aria-hidden="true">＋</span></summary><div class="compact-disclosure-body">
           <div class="rq-branch-diagram" aria-label="Deeper questions connected to responsible population inference">
             <svg class="rq-curves" viewBox="0 0 1000 120" preserveAspectRatio="none" aria-hidden="true"><path d="M500 0 C500 42 165 36 165 120"/><path d="M500 0 C500 44 500 44 500 120"/><path d="M500 0 C500 42 835 36 835 120"/></svg>
             <div class="rq-branch-node"><span class="rq-branch-kicker">DEEPER QUESTION A</span><p>How do selection bias and underrepresentation affect comparisons between groups?</p></div>
@@ -899,10 +894,12 @@
           </div>
           <div class="rq-method-row"><strong>Potential methods</strong><span>Selection-bias analysis</span><span>Subgroup validation</span><span>Privacy-preserving statistics</span><span>Fairness evaluation</span><span>Data provenance</span><span>Sensitivity analysis</span></div>
           <p class="rq-insight"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i><span><strong>Intellectual challenge:</strong> examine who is represented, whose uncertainty is hidden, and who may be harmed when statistical results guide decisions.</span></p>
+        
+          </div></details>
         </article>
       </div>
 
-      <div class="rq-unifying glass-strong rounded-2xl p-6 md:p-8 mt-6">
+      <div class="rq-unifying glass-strong rounded-2xl p-5 md:p-6 mt-6">
         <p class="eyebrow text-xs uppercase" style="color:var(--teal);">THE UNIFYING DOCTORAL QUESTION</p>
         <h4 class="text-xl md:text-2xl font-semibold mt-3">How can statistical learning frameworks remain reliable under incomplete data, population heterogeneity, spatial-temporal change, and uncertainty—while preserving interpretability and protecting vulnerable populations?</h4>
         <p class="text-sm mt-3" style="color:var(--text-muted);">These are candidate research directions, not a finalized proposal. A feasible dissertation would narrow the scope around a specific scientific gap, study design, data source and supervisory expertise.</p>
@@ -920,28 +917,28 @@
       </p>
 
       <div class="grid md:grid-cols-2 gap-5 mt-8">
-        <article class="glass rounded-2xl p-7 card-hover">
+        <article class="glass rounded-2xl p-5 card-hover">
           <span class="badge text-[11px] px-2 py-1 rounded-full">DIRECTION 01</span>
           <h4 class="font-semibold text-lg mt-4">Public Health &amp; Biostatistics</h4>
           <p class="text-sm mt-3" style="color:var(--text-muted);">Developing deeper expertise in statistical modeling, population-health inference, longitudinal analysis, survey methods and statistical learning for real-world health data.</p>
           <p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Possible settings:</strong> public health, global health, refugee health, health inequalities and resource-constrained populations.</p>
         </article>
 
-        <article class="glass rounded-2xl p-7 card-hover">
+        <article class="glass rounded-2xl p-5 card-hover">
           <span class="badge text-[11px] px-2 py-1 rounded-full">DIRECTION 02</span>
           <h4 class="font-semibold text-lg mt-4">Spatial &amp; Temporal Population Modeling</h4>
           <p class="text-sm mt-3" style="color:var(--text-muted);">Building on my earlier experience with GIS and time-series analysis to develop stronger expertise in spatial statistics, longitudinal modeling and, where appropriate, spatio-temporal methods.</p>
           <p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Possible settings:</strong> disease patterns, service access, environmental exposure, displacement and population outcomes.</p>
         </article>
 
-        <article class="glass rounded-2xl p-7 card-hover">
+        <article class="glass rounded-2xl p-5 card-hover">
           <span class="badge text-[11px] px-2 py-1 rounded-full">DIRECTION 03</span>
           <h4 class="font-semibold text-lg mt-4">Humanitarian &amp; Population Data Analytics</h4>
           <p class="text-sm mt-3" style="color:var(--text-muted);">Investigating how statistical and data-science methods can support evidence generation in humanitarian and resource-constrained settings where data quality, missingness and operational constraints affect inference.</p>
           <p class="text-sm mt-3" style="color:var(--text-muted);"><strong style="color:var(--text);">Possible settings:</strong> displaced populations, protection, health services, crisis response and community-level outcomes.</p>
         </article>
 
-        <article class="glass rounded-2xl p-7 card-hover">
+        <article class="glass rounded-2xl p-5 card-hover">
           <span class="badge text-[11px] px-2 py-1 rounded-full">DIRECTION 04</span>
           <h4 class="font-semibold text-lg mt-4">Applied Machine Learning &amp; NLP for Population Data</h4>
           <p class="text-sm mt-3" style="color:var(--text-muted);">Exploring how machine learning can be used responsibly with sensitive population data, with attention to privacy, bias, uncertainty, interpretability and reproducibility.</p>
@@ -950,18 +947,18 @@
       </div>
     </div>
 
-    <div class="research-structured mt-16 grid lg:grid-cols-3 gap-5">
-      <div class="glass rounded-2xl p-7">
+    <div class="research-structured mt-8 grid lg:grid-cols-3 gap-4">
+      <div class="glass rounded-2xl p-5">
         <p class="eyebrow text-xs uppercase" style="color:var(--teal);">Current foundation</p>
         <h3 class="font-semibold mt-3">What I already bring</h3>
         <p class="text-sm mt-3" style="color:var(--text-muted);">Statistical inference, biostatistics, time-series analysis, GIS, machine learning, NLP, data systems and field-based humanitarian information management.</p>
       </div>
-      <div class="glass rounded-2xl p-7">
+      <div class="glass rounded-2xl p-5">
         <p class="eyebrow text-xs uppercase" style="color:var(--teal);">Doctoral development</p>
         <h3 class="font-semibold mt-3">What I want to deepen</h3>
         <p class="text-sm mt-3" style="color:var(--text-muted);">Biostatistical modeling, spatial and longitudinal methods, statistical learning, uncertainty, missing-data methods and rigorous study design.</p>
       </div>
-      <div class="glass rounded-2xl p-7">
+      <div class="glass rounded-2xl p-5">
         <p class="eyebrow text-xs uppercase" style="color:var(--teal);">Long-term aim</p>
         <h3 class="font-semibold mt-3">What I hope to contribute</h3>
         <p class="text-sm mt-3" style="color:var(--text-muted);">Reproducible and statistically defensible methods for complex population data, with practical relevance to public health and humanitarian decision-making.</p>
@@ -982,7 +979,7 @@
 </section>
 
 <!-- DASHBOARDS / SHINY -->
-<section id="dashboards" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+<section id="dashboards" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
     <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 04 — Research Translation & Computational Systems</p>
     <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-3xl">From operational information to analytical evidence.</h2>
@@ -999,7 +996,7 @@
       <div class="glass rounded-xl p-4"><p class="eyebrow text-xs uppercase" style="color:var(--teal);">03 · RESEARCH RELEVANCE</p><p class="font-semibold mt-2">From records to evidence</p><p class="text-sm mt-2" style="color:var(--text-muted);">A practical foundation for studying uncertainty, patterns and data limitations.</p></div>
     </div>
 
-    <div class="grid lg:grid-cols-2 gap-6 mt-12">
+    <div class="grid lg:grid-cols-2 gap-6 mt-8">
 
       <div class="glass-strong rounded-2xl overflow-hidden card-hover">
         <div class="aspect-video relative" style="background:var(--bg2);">
@@ -1089,7 +1086,7 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+<section id="projects" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
     <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 05 — Research Evidence</p>
     <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-3xl">Projects framed as research questions, methods and evidence.</h2>
@@ -1121,9 +1118,9 @@
     </div>
     <p class="text-xs mt-3 mb-2" style="color:var(--text-muted);">Conceptual progression across research experience—not a claim that every project followed this exact chronology.</p>
 
-    <div class="grid md:grid-cols-2 gap-5 mt-12">
+    <div class="grid md:grid-cols-2 gap-5 mt-8">
 
-      <article class="project-card glass rounded-2xl p-7 card-hover" data-cat="statistics time-series">
+      <article class="project-card glass rounded-2xl p-5 card-hover" data-cat="statistics time-series">
         <span class="badge text-[11px] px-2 py-1 rounded-full">STATISTICAL MODELING · TIME SERIES</span>
         <h3 class="font-semibold text-lg mt-4">Rainfall Forecasting in Sylhet District</h3>
         <p class="text-sm mt-3" style="color:var(--text-muted);">
@@ -1131,6 +1128,7 @@
           Can seasonal time-series structure be used to forecast district-level rainfall and characterize
           temporal variation in an environmental process?
         </p>
+        <details class="compact-disclosure"><summary>View full details <span aria-hidden="true">＋</span></summary><div class="compact-disclosure-body">
         <p class="text-sm mt-3" style="color:var(--text-muted);">
           <strong style="color:var(--text);">Approach.</strong>
           Implemented a SARIMA forecasting model in R, using statistical time-series methodology to represent
@@ -1148,9 +1146,10 @@
           <span class="badge text-[11px] px-2 py-1 rounded-full">SARIMA</span>
           <span class="badge text-[11px] px-2 py-1 rounded-full">Time Series</span>
         </div>
+      </div></details>
       </article>
 
-      <article class="project-card glass rounded-2xl p-7 card-hover" data-cat="statistics gis">
+      <article class="project-card glass rounded-2xl p-5 card-hover" data-cat="statistics gis">
         <span class="badge text-[11px] px-2 py-1 rounded-full">SPATIAL ANALYSIS · GIS</span>
         <h3 class="font-semibold text-lg mt-4">Spatial Analysis of COVID-19 Transmission Risk</h3>
         <p class="text-sm mt-3" style="color:var(--text-muted);">
@@ -1158,6 +1157,7 @@
           How does COVID-19 transmission risk vary geographically across Bangladesh, and where do spatial
           patterns indicate comparatively higher-risk areas?
         </p>
+        <details class="compact-disclosure"><summary>View full details <span aria-hidden="true">＋</span></summary><div class="compact-disclosure-body">
         <p class="text-sm mt-3" style="color:var(--text-muted);">
           <strong style="color:var(--text);">Approach.</strong>
           Combined district-level GIS mapping with inferential statistical analysis to examine spatial variation
@@ -1175,9 +1175,10 @@
           <span class="badge text-[11px] px-2 py-1 rounded-full">Statistics</span>
           <span class="badge text-[11px] px-2 py-1 rounded-full">Spatial Analysis</span>
         </div>
+      </div></details>
       </article>
 
-      <article class="project-card glass rounded-2xl p-7 card-hover" data-cat="nlp ai">
+      <article class="project-card glass rounded-2xl p-5 card-hover" data-cat="nlp ai">
         <span class="badge text-[11px] px-2 py-1 rounded-full">NLP · DEEP LEARNING</span>
         <h3 class="font-semibold text-lg mt-4">Bengali Math-Quest</h3>
         <p class="text-sm mt-3" style="color:var(--text-muted);">
@@ -1185,6 +1186,7 @@
           How can deep-learning methods be applied to question answering in Bengali, an under-resourced
           language, using a domain-specific mathematical task?
         </p>
+        <details class="compact-disclosure"><summary>View full details <span aria-hidden="true">＋</span></summary><div class="compact-disclosure-body">
         <p class="text-sm mt-3" style="color:var(--text-muted);">
           <strong style="color:var(--text);">Approach.</strong>
           Developed a Bengali-language mathematics question-answering system using Python and TensorFlow,
@@ -1202,9 +1204,10 @@
           <span class="badge text-[11px] px-2 py-1 rounded-full">TensorFlow</span>
           <span class="badge text-[11px] px-2 py-1 rounded-full">Bengali NLP</span>
         </div>
+      </div></details>
       </article>
 
-      <article class="project-card glass rounded-2xl p-7 card-hover" data-cat="humanitarian pim">
+      <article class="project-card glass rounded-2xl p-5 card-hover" data-cat="humanitarian pim">
         <span class="badge text-[11px] px-2 py-1 rounded-full">HUMANITARIAN INFORMATICS</span>
         <h3 class="font-semibold text-lg mt-4">Protection Information Management Systems</h3>
         <p class="text-sm mt-3" style="color:var(--text-muted);">
@@ -1212,6 +1215,7 @@
           How can sensitive, heterogeneous protection data be collected, validated, integrated and translated
           into reliable evidence under operational constraints across a large humanitarian programme?
         </p>
+        <details class="compact-disclosure"><summary>View full details <span aria-hidden="true">＋</span></summary><div class="compact-disclosure-body">
         <p class="text-sm mt-3" style="color:var(--text-muted);">
           <strong style="color:var(--text);">Approach.</strong>
           Designed and supported three web-based information-management systems spanning Child Protection,
@@ -1233,9 +1237,10 @@
           <span class="badge text-[11px] px-2 py-1 rounded-full">CPIMS+</span>
           <span class="badge text-[11px] px-2 py-1 rounded-full">ActivityInfo</span>
         </div>
+      </div></details>
       </article>
 
-      <article class="project-card glass rounded-2xl p-7 card-hover" data-cat="responsible-ai nlp gis">
+      <article class="project-card glass rounded-2xl p-5 card-hover" data-cat="responsible-ai nlp gis">
         <span class="badge text-[11px] px-2 py-1 rounded-full">PRIVACY · STATISTICS · GIS</span>
         <h3 class="font-semibold text-lg mt-4">Digital Privacy &amp; Security for Children</h3>
         <p class="text-sm mt-3" style="color:var(--text-muted);">
@@ -1243,6 +1248,7 @@
           What factors are associated with children's digital privacy and security risks, and how can those
           risks be examined quantitatively across populations and locations?
         </p>
+        <details class="compact-disclosure"><summary>View full details <span aria-hidden="true">＋</span></summary><div class="compact-disclosure-body">
         <p class="text-sm mt-3" style="color:var(--text-muted);">
           <strong style="color:var(--text);">Approach.</strong>
           Used statistical modeling, hypothesis testing, survey methods and GIS-based spatial analysis in
@@ -1260,9 +1266,10 @@
           <span class="badge text-[11px] px-2 py-1 rounded-full">SPSS / STATA</span>
           <span class="badge text-[11px] px-2 py-1 rounded-full">GIS</span>
         </div>
+      </div></details>
       </article>
 
-      <article class="project-card glass rounded-2xl p-7 card-hover" data-cat="humanitarian pim data-science">
+      <article class="project-card glass rounded-2xl p-5 card-hover" data-cat="humanitarian pim data-science">
         <span class="badge text-[11px] px-2 py-1 rounded-full">DATA QUALITY · DECISION SUPPORT</span>
         <h3 class="font-semibold text-lg mt-4">Field-to-Evidence Data Workflow</h3>
         <p class="text-sm mt-3" style="color:var(--text-muted);">
@@ -1270,6 +1277,7 @@
           How can field observations remain analytically trustworthy when data are collected offline,
           produced by multiple actors and subsequently used for protection decisions?
         </p>
+        <details class="compact-disclosure"><summary>View full details <span aria-hidden="true">＋</span></summary><div class="compact-disclosure-body">
         <p class="text-sm mt-3" style="color:var(--text-muted);">
           <strong style="color:var(--text);">Approach.</strong>
           Developed validation-driven forms, Python/SQL cleaning workflows, structured integrations and
@@ -1289,11 +1297,12 @@
           <span class="badge text-[11px] px-2 py-1 rounded-full">R Shiny</span>
           <span class="badge text-[11px] px-2 py-1 rounded-full">Power BI</span>
         </div>
+      </div></details>
       </article>
 
     </div>
 
-    <div class="project-synthesis glass-strong rounded-2xl p-6 md:p-8 mt-8">
+    <div class="project-synthesis glass-strong rounded-2xl p-5 md:p-6 mt-8">
       <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// What this evidence prepares me to investigate</p>
       <h3 class="text-xl md:text-2xl font-semibold mt-3">From applying methods to questioning when evidence can be trusted.</h3>
       <p class="text-sm mt-3 max-w-4xl" style="color:var(--text-muted);">Across these projects, the common thread is not a claim that one method solves every problem. It is a growing interest in how data are generated, how assumptions shape results, how models perform beyond the data used to develop them, and how uncertainty should be communicated—especially when decisions affect people and communities.</p>
@@ -1310,13 +1319,13 @@
 </section>
 
 <!-- PUBLICATION -->
-<section id="publication" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+<section id="publication" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
     <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 06 — Peer-Reviewed Publication</p>
     <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-2xl">Published research in statistical analysis and forecasting.</h2>
     <p class="mt-4 max-w-3xl text-sm md:text-base" style="color:var(--text-muted);">My peer-reviewed publication examines patterns in internet use in Bangladesh and reflects my early research training in quantitative analysis, growth measurement and time-series forecasting.</p>
 
-    <div class="glass-strong rounded-2xl p-8 mt-10 flex flex-col md:flex-row md:items-start gap-6 card-hover">
+    <div class="glass-strong rounded-2xl p-5 mt-6 flex flex-col md:flex-row md:items-start gap-6 card-hover">
       <div class="w-14 h-14 rounded-xl grid place-items-center shrink-0" style="background:rgba(20,184,166,.12); color:var(--teal);">
         <i class="fa-solid fa-book-open text-xl"></i>
       </div>
@@ -1342,12 +1351,12 @@
 </section>
 
 <!-- EDUCATION / EXPERIENCE -->
-<section id="education" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
-  <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-14">
+<section id="education" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
+  <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-8">
     <div>
       <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 07 — Education</p>
       <h2 class="text-2xl md:text-3xl font-bold mt-3 mb-8">The methodological foundation</h2>
-      <div class="space-y-5">
+      <div class="space-y-3">
         <div class="glass rounded-xl p-5 education-card">
           <div class="flex flex-wrap items-center justify-between gap-2 text-sm"><span class="font-semibold">M.Sc. Computer Science &amp; Engineering</span><span class="education-status">Result pending</span></div>
           <p class="text-xs mt-1" style="color:var(--text-muted);">Shahjalal University of Science &amp; Technology (SUST)</p>
@@ -1369,7 +1378,7 @@
     <div>
       <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 08 — Experience</p>
       <h2 class="text-2xl md:text-3xl font-bold mt-3 mb-8">From statistical training to field research</h2>
-      <div class="relative pl-6 space-y-7" style="border-left:1px solid var(--border-strong);">
+      <div class="relative pl-6 space-y-4" style="border-left:1px solid var(--border-strong);">
         <div class="relative">
           <span class="absolute -left-[27px] top-1 w-3 h-3 rounded-full" style="background:var(--teal);"></span>
           <p class="text-xs font-mono" style="color:var(--text-dim);">Jan 2026 – Jun 2026 · Cox's Bazar, Bangladesh</p>
@@ -1419,7 +1428,7 @@
 
 <!-- CONTACT -->
 <!-- PROFESSIONAL PHOTOS -->
-<section id="photos" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+<section id="photos" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
     <div class="max-w-3xl mb-10">
       <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 08 — Professional moments</p>
@@ -1442,7 +1451,7 @@
 </section>
 
 <!-- TRAINING & PROFESSIONAL DEVELOPMENT -->
-<section id="training" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+<section id="training" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
     <div class="max-w-3xl mb-10">
       <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 08 — Training & professional development</p>
@@ -1452,7 +1461,7 @@
       </p>
     </div>
 
-    <div class="grid md:grid-cols-2 gap-5">
+    <div class="grid md:grid-cols-2 gap-4">
       <article class="glass rounded-xl p-6">
         <div class="flex items-start gap-4">
           <div class="w-11 h-11 rounded-xl grid place-items-center shrink-0" style="background:rgba(20,184,166,.12);color:var(--teal);">
@@ -1499,7 +1508,7 @@
   </div>
 </section>
 
-<section id="contact" class="py-24 md:py-32 border-t" style="border-color:var(--border);">
+<section id="contact" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-4xl mx-auto px-6 text-center">
 
     <p class="eyebrow text-xs uppercase" style="color:var(--teal);">
