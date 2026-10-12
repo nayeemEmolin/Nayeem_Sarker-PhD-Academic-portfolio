@@ -273,6 +273,12 @@
 
 #education .experience-note + .experience-note { margin-top: 6px; }
 #education .experience-note { overflow-wrap: anywhere; }
+#education .experience-title-row { display:flex; align-items:flex-start; justify-content:space-between; gap:.7rem; flex-wrap:wrap; }
+#education .experience-title-row > p { flex:1 1 15rem; }
+#education .experience-org-logos { display:flex; align-items:center; gap:.4rem; flex:0 0 auto; margin-top:.25rem; }
+#education .experience-org-logos img { display:block; width:auto; max-width:74px; height:30px; object-fit:contain; padding:3px; border:1px solid var(--border); border-radius:.45rem; background:#fff; }
+#training .training-provider-logo { width:66px; height:58px; flex:0 0 66px; display:flex; align-items:center; justify-content:center; padding:.35rem; border:1px solid var(--border); border-radius:.7rem; background:#fff; }
+#training .training-provider-logo img { display:block; max-width:100%; max-height:100%; width:auto; height:auto; object-fit:contain; }
 @media (min-width: 1024px) {
   #education .experience-note { max-width: 38rem; }
 }
@@ -1464,14 +1470,14 @@
         <div class="relative">
           <span class="absolute -left-[27px] top-1 w-3 h-3 rounded-full" style="background:var(--teal);"></span>
           <p class="text-xs font-mono" style="color:var(--text-dim);">Jan 2026 – Jun 2026 · Cox's Bazar, Bangladesh</p>
-          <p class="font-semibold text-sm mt-1">Senior Officer – Information Management | UNHCR–CODEC EPRC</p>
+          <div class="experience-title-row"><p class="font-semibold text-sm mt-1">Senior Officer – Information Management | UNHCR–CODEC EPRC</p><div class="experience-org-logos" aria-label="Organization logos"><img src="logos/unhcr_logo.png" alt="UNHCR logo" loading="lazy"><img src="logos/codec_logo.png" alt="CODEC logo" loading="lazy"></div></div>
           <p class="experience-note">Supported protection-data management and analysis across 26 Rohingya refugee camps, covering Child Protection, Gender-Based Violence and Community-Based Protection.</p>
           <p class="experience-note">Used Power BI, SQL, Python and Excel for data cleaning, quality checks, monthly trend analysis and evidence-based reporting; maintained collection tools and information systems in line with programme needs.</p>
         </div>
         <div class="relative">
           <span class="absolute -left-[27px] top-1 w-3 h-3 rounded-full" style="background:var(--royal);"></span>
           <p class="text-xs font-mono" style="color:var(--text-dim);">Jan 2025 – Dec 2025 · Cox's Bazar, Bangladesh</p>
-          <p class="font-semibold text-sm mt-1">Information Management Manager (promoted from Specialist) | UNHCR–CODEC EPRC</p>
+          <div class="experience-title-row"><p class="font-semibold text-sm mt-1">Information Management Manager (promoted from Specialist) | UNHCR–CODEC EPRC</p><div class="experience-org-logos" aria-label="Organization logos"><img src="logos/unhcr_logo.png" alt="UNHCR logo" loading="lazy"><img src="logos/codec_logo.png" alt="CODEC logo" loading="lazy"></div></div>
           <p class="experience-note">Oversaw protection information management across 26 camps and managed reporting workflows involving approximately 4,500 case records, with attention to data quality, confidentiality and responsible handling of sensitive information.</p>
           <p class="experience-note">Designed, deployed and maintained three web-based information-management systems for protection case data, indicator tracking and referral logs. Managed ActivityInfo and CPIMS+ datasets and served as a focal point for multi-sector reporting.</p>
           <p class="experience-note">Developed KoboToolbox/XLSForm tools with validation and skip logic; built Power BI dashboards and Excel/Python workflows for KPI monitoring and disaggregation; delivered five technical training sessions and supported capacity building for approximately 150 programme personnel.</p>
@@ -1479,14 +1485,14 @@
         <div class="relative">
           <span class="absolute -left-[27px] top-1 w-3 h-3 rounded-full" style="background:var(--teal);"></span>
           <p class="text-xs font-mono" style="color:var(--text-dim);">Sep 2024 – Dec 2024 · Cox's Bazar, Bangladesh</p>
-          <p class="font-semibold text-sm mt-1">Information Management Specialist | CODEC EPRC</p>
+          <div class="experience-title-row"><p class="font-semibold text-sm mt-1">Information Management Specialist | CODEC EPRC</p><div class="experience-org-logos" aria-label="CODEC logo"><img src="logos/codec_logo.png" alt="CODEC logo" loading="lazy"></div></div>
           <p class="experience-note">Supported information systems serving 26 camps, including ActivityInfo and CPIMS+ data entry, cleaning, validation and indicator-based reporting.</p>
           <p class="experience-note">Developed KoboToolbox, Microsoft Forms and Google Forms collection tools; contributed to preprocessing, statistical analysis and dashboard updates in coordination with Case Management and M&amp;E teams.</p>
         </div>
         <div class="relative">
           <span class="absolute -left-[27px] top-1 w-3 h-3 rounded-full" style="background:var(--royal);"></span>
           <p class="text-xs font-mono" style="color:var(--text-dim);">Jun 2022 – Jun 2024 · Sylhet, Bangladesh</p>
-          <p class="font-semibold text-sm mt-1">Research Intern — Statistics &amp; Data Science | Leading University, Department of CSE</p>
+          <div class="experience-title-row"><p class="font-semibold text-sm mt-1">Research Intern — Statistics &amp; Data Science | Leading University, Department of CSE</p><div class="experience-org-logos" aria-label="Leading University logo"><img src="logos/leading_university_logo.png" alt="Leading University logo" loading="lazy"></div></div>
           <p class="experience-note">Conducted research on digital privacy and security for children, applying statistical modelling, hypothesis testing, survey design and sampling; also explored machine learning and GIS-based spatial analysis.</p>
           <p class="experience-note">Developed dashboards and visualisations using Power BI, Tableau and Google Data Studio, strengthening the link between quantitative methods and applied research communication.</p>
         </div>
@@ -1500,7 +1506,7 @@
         <div class="relative">
           <span class="absolute -left-[27px] top-1 w-3 h-3 rounded-full" style="background:var(--royal);"></span>
           <p class="text-xs font-mono" style="color:var(--text-dim);">Feb 2016 – May 2022 · Part-time · Sylhet, Bangladesh</p>
-          <p class="font-semibold text-sm mt-1">Mathematics, Physics &amp; ICT Teacher | Focus University Admission Coaching / Radium Engineering &amp; University Admission Coaching</p>
+          <div class="experience-title-row"><p class="font-semibold text-sm mt-1">Mathematics, Physics &amp; ICT Teacher | Focus University Admission Coaching / Radium Engineering &amp; University Admission Coaching</p><div class="experience-org-logos" aria-label="Focus and Radium logos"><img src="logos/focus_university_admission_coaching_logo.jpg" alt="Focus University Admission Coaching logo" loading="lazy"><img src="logos/radium_university_admission_coaching_logo.png" alt="Radium Engineering and University Admission Coaching logo" loading="lazy"></div></div>
           <p class="experience-note">Taught mathematics, physics and ICT, including probability, statistics fundamentals and quantitative problem-solving; used learner performance and assessment results to guide instruction.</p>
         </div>
       </div>
@@ -1546,9 +1552,7 @@
     <div class="grid md:grid-cols-2 gap-4">
       <article class="glass rounded-xl p-6">
         <div class="flex items-start gap-4">
-          <div class="w-11 h-11 rounded-xl grid place-items-center shrink-0" style="background:rgba(20,184,166,.12);color:var(--teal);">
-            <i class="fa-solid fa-lightbulb"></i>
-          </div>
+          <div class="training-provider-logo"><img src="logos/bangladesh_hi_tech_park_authority_logo.jpg" alt="Bangladesh Hi-Tech Park Authority logo" loading="lazy"></div>
           <div>
             <p class="text-xs uppercase tracking-wider mb-2" style="color:var(--teal);">Innovation & entrepreneurship</p>
             <h3 class="font-semibold text-base">University Innovation Hub Program (UIHP — SUST Cohort 1)</h3>
@@ -1559,9 +1563,7 @@
 
       <article class="glass rounded-xl p-6">
         <div class="flex items-start gap-4">
-          <div class="w-11 h-11 rounded-xl grid place-items-center shrink-0" style="background:rgba(52,87,201,.14);color:var(--royal);">
-            <i class="fa-solid fa-book-open"></i>
-          </div>
+          <div class="training-provider-logo"><img src="logos/bd_social_science_research_council_logo.jpg" alt="Bangladesh Social Science Research Council logo" loading="lazy"></div>
           <div>
             <p class="text-xs uppercase tracking-wider mb-2" style="color:var(--teal);">Research methods</p>
             <h3 class="font-semibold text-base">60-Hour Training Course on Research Techniques in Social Sciences</h3>
@@ -1572,9 +1574,7 @@
 
       <article class="glass rounded-xl p-6 md:col-span-2">
         <div class="flex items-start gap-4">
-          <div class="w-11 h-11 rounded-xl grid place-items-center shrink-0" style="background:rgba(20,184,166,.12);color:var(--teal);">
-            <i class="fa-solid fa-code"></i>
-          </div>
+          <div class="training-provider-logo"><img src="logos/udemy_logo.jpg" alt="Udemy logo" loading="lazy"></div>
           <div class="flex-1">
             <p class="text-xs uppercase tracking-wider mb-2" style="color:var(--teal);">Online professional courses · Udemy</p>
             <h3 class="font-semibold text-base">Software development & emerging tools</h3>
