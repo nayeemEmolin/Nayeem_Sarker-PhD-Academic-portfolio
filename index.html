@@ -89,6 +89,10 @@
 
   .nav-link{ position:relative; color:var(--text-muted); transition:color .25s; }
   .nav-link:hover{ color:var(--text); }
+  .mobile-nav-toggle { color:var(--text); align-items:center; justify-content:center; min-height:36px; }
+  .mobile-nav-menu { box-shadow:0 18px 44px rgba(0,0,0,.18); }
+  .mobile-nav-menu a { min-height:32px; display:flex; align-items:center; }
+  .mobile-nav-menu a:focus-visible, .mobile-nav-toggle:focus-visible { outline:2px solid var(--teal); outline-offset:3px; }
   .nav-link::after{
     content:''; position:absolute; left:0; bottom:-4px; width:0; height:1px; background:var(--teal);
     transition:width .25s ease;
@@ -274,7 +278,7 @@
 }
 
 
-  /* Continuous horizontal carousel moving from left to right */
+  /* Continuous horizontal carousel moving from right to left */
   #photos .photo-gallery-wrap { overflow:hidden; width:100%; position:relative; padding:.25rem 0 1rem; }
   #photos .photo-gallery { display:flex; flex-wrap:nowrap; gap:1.25rem; width:max-content; animation:photo-marquee-rtl 58s linear infinite; will-change:transform; }
   #photos .photo-card { flex:0 0 clamp(270px,34vw,390px); min-width:0; display:flex; flex-direction:column; transition:border-color .25s ease; }
@@ -297,7 +301,7 @@
   #photos .photo-card h3 { font-weight:600; font-size:1rem; line-height:1.45; color:var(--text); }
   #photos .photo-card p { color:var(--text-muted); font-size:.83rem; line-height:1.7; margin-top:.55rem; text-align:left; text-justify:auto; }
   #photos .photo-note { color:var(--text-dim); font-size:.75rem; line-height:1.6; margin-top:1.25rem; text-align:left; text-justify:auto; }
-  @media(max-width:640px) { #photos .photo-gallery { grid-template-columns:1fr; gap:1rem; } #photos .photo-card figcaption { padding:1rem; } }
+  @media(max-width:640px) { #photos .photo-gallery { gap:1rem; } #photos .photo-card figcaption { padding:1rem; } }
 
 
   
@@ -357,7 +361,7 @@
     #research .research-map-node { min-height: 0; }
   }
   @media (prefers-reduced-motion: reduce) {
-    #photos .photo-gallery { animation-duration: 120s !important; }
+    #photos .photo-gallery { animation: none !important; }
     .grad-text, .pipe-packet { animation: none !important; }
     *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
   }
@@ -391,7 +395,7 @@
 
 
   /* Contact section: full-width, compact research statement */
-  #contact .contact-copy { max-width: none; }
+  #contact .contact-copy { max-width: none; text-align:left; text-justify:auto; }
   #contact .contact-copy + .contact-copy { margin-top: .85rem !important; }
   #contact .btn-primary, #contact .btn-ghost { min-height: 44px; }
   @media (max-width: 640px) {
@@ -442,6 +446,9 @@
         <a href="#photos" class="nav-link">Photos</a>
         <a href="#training" class="nav-link">Training</a>
       </div>
+      <button id="mobileNavToggle" type="button" class="mobile-nav-toggle lg:hidden btn-ghost rounded-xl px-3 py-2 text-sm" aria-controls="mobileNavMenu" aria-expanded="false" aria-label="Open navigation menu">
+        <i class="fa-solid fa-bars" aria-hidden="true"></i><span class="ml-2">Menu</span>
+      </button>
       <div class="flex items-center gap-2">
         <button id="themeToggle" aria-label="Toggle color theme" class="theme-toggle w-9 h-9 rounded-full grid place-items-center" style="color:var(--text);">
           <i class="fa-solid fa-moon text-sm" id="themeIcon"></i>
@@ -449,6 +456,19 @@
         <a href="#contact" class="hidden md:inline-flex btn-primary text-sm text-white px-4 py-2 rounded-full font-medium">Contact</a>
       </div>
     </nav>
+    <div id="mobileNavMenu" class="mobile-nav-menu hidden lg:hidden glass rounded-2xl mt-2 p-3 grid grid-cols-2 gap-x-4 gap-y-3 text-sm" aria-label="Mobile navigation">
+      <a href="#about" class="nav-link">About</a>
+      <a href="#overview" class="nav-link">Overview</a>
+      <a href="#pipeline" class="nav-link">Pipeline</a>
+      <a href="#research" class="nav-link">Research</a>
+      <a href="#dashboards" class="nav-link">Dashboards</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#publication" class="nav-link">Publication</a>
+      <a href="#education" class="nav-link">Education &amp; experience</a>
+      <a href="#photos" class="nav-link">Photos</a>
+      <a href="#training" class="nav-link">Training</a>
+      <a href="#contact" class="btn-primary text-white text-center px-3 py-2 rounded-full font-medium col-span-2">Contact</a>
+    </div>
   </div>
 </header>
 
@@ -500,15 +520,15 @@
         <div class="kpi-num text-3xl font-semibold" style="color:var(--teal);">26</div>
         <div class="text-xs mt-1" style="color:var(--text-muted);">Rohingya refugee camps supported through information management</div>
       </div>
-      <div class="glass rounded-2xl p-5 card-hover">
+      <div class="glass rounded-2xl p-4 card-hover">
         <div class="kpi-num text-3xl font-semibold" style="color:var(--teal);">3</div>
         <div class="text-xs mt-1" style="color:var(--text-muted);">Web-based information-management systems designed &amp; deployed</div>
       </div>
-      <div class="glass rounded-2xl p-5 card-hover">
+      <div class="glass rounded-2xl p-4 card-hover">
         <div class="kpi-num text-3xl font-semibold" style="color:var(--teal);"><i class="fa-solid fa-chart-line" aria-hidden="true"></i></div>
         <div class="text-xs mt-1" style="color:var(--text-muted);">Data-quality and reporting workflows</div>
       </div>
-      <div class="glass rounded-2xl p-5 card-hover">
+      <div class="glass rounded-2xl p-4 card-hover">
         <div class="kpi-num text-3xl font-semibold" style="color:var(--teal);">~150</div>
         <div class="text-xs mt-1" style="color:var(--text-muted);">Field and programme staff supported</div>
       </div>
@@ -649,12 +669,12 @@
   <div class="max-w-6xl mx-auto px-6">
     <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-5">
       <div>
-        <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 01 — 60-Second Overview</p>
-        <h2 class="text-3xl md:text-4xl font-bold mt-3">A professor should understand the whole profile in one minute.</h2>
+        <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 03 — 60-Second Overview</p>
+        <h2 class="text-3xl md:text-4xl font-bold mt-3">Research profile at a glance</h2>
         <p class="mt-4 max-w-3xl text-sm md:text-base" style="color:var(--text-muted);">
           Click through the four steps to see the research story, evidence and doctoral direction at a glance.
-          <p class="mt-3 max-w-3xl text-sm" style="color:var(--text-muted);">My training in Statistics and experience with humanitarian information systems have shaped my interest in rigorous, data-driven approaches to population health and humanitarian challenges.</p>
         </p>
+        <p class="mt-3 max-w-3xl text-sm" style="color:var(--text-muted);">My training in Statistics and experience with humanitarian information systems have shaped my interest in rigorous, data-driven approaches to population health and humanitarian challenges.</p>
       </div>
       <div class="text-xs uppercase tracking-widest" style="color:var(--text-muted);">
         4 steps · ~60 seconds
@@ -830,7 +850,7 @@
 <!-- RESEARCH FOCUS -->
 <section id="research" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
-    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 03 — PhD Research Agenda</p>
+    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 04 — PhD Research Agenda</p>
     <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-4xl">Statistical learning for population health and humanitarian data.</h2>
     <p class="mt-5 max-w-4xl text-sm md:text-base" style="color:var(--text-muted);">
       I am interested in how <span style="color:var(--text);">statistical methods, spatial-temporal analysis and responsible machine learning</span>
@@ -1043,7 +1063,7 @@
 <!-- DASHBOARDS / SHINY -->
 <section id="dashboards" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
-    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 04 — Research Translation & Computational Systems</p>
+    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 05 — Research Translation & Computational Systems</p>
     <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-3xl">From operational information to analytical evidence.</h2>
     <p class="mt-4 max-w-3xl text-sm md:text-base" style="color:var(--text-muted);">
       I develop information systems and analytical tools that structure complex real-world data for monitoring,
@@ -1150,7 +1170,7 @@
 <!-- PROJECTS -->
 <section id="projects" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
-    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 05 — Research Evidence</p>
+    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 06 — Research Evidence</p>
     <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-3xl">Projects framed as research questions, methods and evidence.</h2>
     <p class="mt-5 max-w-3xl text-sm md:text-base" style="color:var(--text-muted);">
       These projects form a progression from statistical modeling and spatial analysis to machine learning,
@@ -1383,7 +1403,7 @@
 <!-- PUBLICATION -->
 <section id="publication" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
-    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 06 — Peer-Reviewed Publication</p>
+    <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 07 — Peer-Reviewed Publication</p>
     <h2 class="text-3xl md:text-4xl font-bold mt-3 max-w-2xl">Published research in statistical analysis and forecasting.</h2>
     <p class="mt-4 max-w-3xl text-sm md:text-base" style="color:var(--text-muted);">My peer-reviewed publication examines patterns in internet use in Bangladesh and reflects my early research training in quantitative analysis, growth measurement and time-series forecasting.</p>
 
@@ -1416,7 +1436,7 @@
 <section id="education" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6 grid lg:grid-cols-2 gap-8">
     <div>
-      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 07 — Education</p>
+      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 08 — Education</p>
       <h2 class="text-2xl md:text-3xl font-bold mt-3 mb-8">The methodological foundation</h2>
       <div class="space-y-3">
         <div class="glass rounded-xl p-5 education-card">
@@ -1438,7 +1458,7 @@
     </div>
 
     <div>
-      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 08 — Experience</p>
+      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 09 — Experience</p>
       <h2 class="text-2xl md:text-3xl font-bold mt-3 mb-8">From statistical training to field research</h2>
       <div class="relative pl-6 space-y-4" style="border-left:1px solid var(--border-strong);">
         <div class="relative">
@@ -1493,7 +1513,7 @@
 <section id="photos" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
     <div class="max-w-3xl mb-10">
-      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 08 — Professional moments</p>
+      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 10 — Professional moments</p>
       <h2 class="text-2xl md:text-3xl font-bold mt-3">Learning, collaboration and applied research.</h2>
       <p class="mt-4 text-sm md:text-base" style="color:var(--text-muted);">Selected moments from programme learning, information-management training, research communication and collaborative activities.</p>
     </div>
@@ -1516,7 +1536,7 @@
 <section id="training" class="py-12 md:py-16 border-t" style="border-color:var(--border);">
   <div class="max-w-6xl mx-auto px-6">
     <div class="max-w-3xl mb-10">
-      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 08 — Training & professional development</p>
+      <p class="eyebrow text-xs uppercase" style="color:var(--teal);">// 11 — Training & professional development</p>
       <h2 class="text-2xl md:text-3xl font-bold mt-3">Continuous learning beyond formal education.</h2>
       <p class="mt-4 text-sm md:text-base" style="color:var(--text-muted);">
         Complementary training in research methods, innovation, and software development supports my interdisciplinary approach to statistical research and applied information systems.
@@ -1574,7 +1594,7 @@
   <div class="max-w-7xl mx-auto px-6 md:px-8 text-left">
 
     <p class="eyebrow text-xs uppercase text-center" style="color:var(--teal);">
-      // 09 — Get in touch
+      // 12 — Get in touch
     </p>
 
     <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mt-3 max-w-5xl mx-auto text-center">
@@ -1656,6 +1676,35 @@
     themeIcon.className = isLight ? 'fa-solid fa-moon text-sm' : 'fa-solid fa-sun text-sm';
   });
 
+  // Accessible mobile navigation
+  const mobileNavToggle = document.getElementById('mobileNavToggle');
+  const mobileNavMenu = document.getElementById('mobileNavMenu');
+  if (mobileNavToggle && mobileNavMenu) {
+    const setMobileNavOpen = (open) => {
+      mobileNavMenu.classList.toggle('hidden', !open);
+      mobileNavToggle.setAttribute('aria-expanded', String(open));
+      mobileNavToggle.setAttribute('aria-label', open ? 'Close navigation menu' : 'Open navigation menu');
+      mobileNavToggle.innerHTML = open
+        ? '<i class="fa-solid fa-xmark" aria-hidden="true"></i><span class="ml-2">Close</span>'
+        : '<i class="fa-solid fa-bars" aria-hidden="true"></i><span class="ml-2">Menu</span>';
+    };
+    mobileNavToggle.addEventListener('click', () => {
+      setMobileNavOpen(mobileNavToggle.getAttribute('aria-expanded') !== 'true');
+    });
+    mobileNavMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => setMobileNavOpen(false));
+    });
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        setMobileNavOpen(false);
+        mobileNavToggle.focus();
+      }
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) setMobileNavOpen(false);
+    });
+  }
+
   // Duplicate cards to make the left-to-right horizontal loop seamless.
   const photoGallery = document.getElementById('photoGallery');
   if (photoGallery && !photoGallery.dataset.loopReady) {
@@ -1683,7 +1732,7 @@
       btn.setAttribute('aria-pressed', 'true');
       const filter = btn.dataset.filter;
       cards.forEach(card => {
-        const cats = (card.dataset.cat || '').split(/\\s+/);
+        const cats = (card.dataset.cat || '').split(/\s+/);
         const show = filter === 'all' || cats.includes(filter) ||
           (filter === 'humanitarian' && cats.includes('pim'));
         card.style.display = show ? '' : 'none';
